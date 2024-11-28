@@ -3,7 +3,6 @@
 #include <math.h>
 #include <cuda_runtime.h>
 #include <cublas_v2.h>
-#include <float.h>
 
 #define CUDA_CHECK(err) if (err != cudaSuccess) { \
     fprintf(stderr, "CUDA error: %s at line %d\n", cudaGetErrorString(err), __LINE__); \
@@ -16,16 +15,16 @@
 }
 
 __global__ void computeResponsibilities(
-    const float* data, const float* means, const float* invCovMatrices,
-    const float* determinants, const float* weights,
-    float* responsibilities, int d, int k, int N) {
+    const double* data, const double* means, const double* invCovMatrices,
+    const double* determinants, const double* weights,
+    double* responsibilities, int d, int k, int N) {
 
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     if (idx >= N) return;
     
-    float sum = 0.0; 
-    float diff[32];
-    float temp[32];
+    double sum = 0.0; 
+    double diff[32];
+    double temp[32];
 
     for (int cluster = 0; cluster < k; ++cluster) {
         for (int i = 0; i < d; ++i) {
@@ -39,21 +38,21 @@ __global__ void computeResponsibilities(
             }
         }
         // Calcola il prodotto tra il vettore differenza e il vettore risultante
-        float mahalanobis = 0.0;
+        double mahalanobis = 0.0;
         for (int i = 0; i < d; ++i) {
             mahalanobis += diff[i] * temp[i];
         }
 
-        float likelihood = expf(-0.5 * mahalanobis) / sqrtf(powf(2 * M_PI, d) * determinants[cluster]);
+        double likelihood = exp(-0.5 * mahalanobis) / sqrt(pow(2 * M_PI, d) * determinants[cluster]);
         responsibilities[idx * k + cluster] = weights[cluster] * likelihood;
         sum += responsibilities[idx * k + cluster];
     }
 
 
    for (int cluster = 0; cluster < k; ++cluster) {
-        // if sum is near 0, set the responsibility to 0
+        // if sum is near 0, set the responsibility to 1/k
         if (sum == 0) {
-            responsibilities[idx * k + cluster] = 0.0;
+            responsibilities[idx * k + cluster] = 1.0 / k;
         } else {
             responsibilities[idx * k + cluster] /= sum;
         }
@@ -61,20 +60,20 @@ __global__ void computeResponsibilities(
 }
 
 __global__ void mStep(
-    const float* data, const float* responsibilities, float* means,
-    float* covMatrices, float* weights, int d, int k, int N) {
+    const double* data, const double* responsibilities, double* means,
+    double* covMatrices, double* weights, int d, int k, int N) {
 
     int cluster = blockIdx.x * blockDim.x + threadIdx.x;
     if (cluster >= k) return;
 
-    float weightSum = 0.0;
+    double weightSum = 0.0;
 
     for (int i = 0; i < d; ++i) {
         means[cluster * d + i] = 0.0;
     }
 
     for (int idx = 0; idx < N; ++idx) {
-        float r = responsibilities[idx * k + cluster]; 
+        double r = responsibilities[idx * k + cluster]; 
         weightSum += r;
         for (int i = 0; i < d; ++i) {
             means[cluster * d + i] += r * data[idx * d + i];
@@ -90,11 +89,11 @@ __global__ void mStep(
     }
 
     for (int idx = 0; idx < N; ++idx) {
-        float r = responsibilities[idx * k + cluster];
+        double r = responsibilities[idx * k + cluster];
         for (int i = 0; i < d; ++i) {
             for (int j = 0; j < d; ++j) {
-                float diff_i = data[idx * d + i] - means[cluster * d + i];
-                float diff_j = data[idx * d + j] - means[cluster * d + j];
+                double diff_i = data[idx * d + i] - means[cluster * d + i];
+                double diff_j = data[idx * d + j] - means[cluster * d + j];
                 covMatrices[cluster * d * d + i * d + j] += r * diff_i * diff_j;
             }
         }
@@ -114,20 +113,20 @@ __global__ void mStep(
 }
 
 void computeInverseMatrices(
-    cublasHandle_t handle, float* d_matrices, int d, int batchSize,
-    float* d_invMatrices, float* d_determinants) {
+    cublasHandle_t handle, double* d_matrices, int d, int batchSize,
+    double* d_invMatrices, double* d_determinants) {
 
-    float** d_matrixArray;
-    CUDA_CHECK(cudaMalloc((void**)&d_matrixArray, batchSize * sizeof(float*)));
-    float** d_invMatrixArray;
-    CUDA_CHECK(cudaMalloc((void**)&d_invMatrixArray, batchSize * sizeof(float*)));
+    double** d_matrixArray;
+    CUDA_CHECK(cudaMalloc((void**)&d_matrixArray, batchSize * sizeof(double*)));
+    double** d_invMatrixArray;
+    CUDA_CHECK(cudaMalloc((void**)&d_invMatrixArray, batchSize * sizeof(double*)));
 
     for (int i = 0; i < batchSize; ++i) {
-        float* matrixAddress = d_matrices + i * d * d;
-        float* invMatrixAddress = d_invMatrices + i * d * d;
+        double* matrixAddress = d_matrices + i * d * d;
+        double* invMatrixAddress = d_invMatrices + i * d * d;
 
-        CUDA_CHECK(cudaMemcpy(d_matrixArray + i, &matrixAddress, sizeof(float*), cudaMemcpyHostToDevice));
-        CUDA_CHECK(cudaMemcpy(d_invMatrixArray + i, &invMatrixAddress, sizeof(float*), cudaMemcpyHostToDevice));
+        CUDA_CHECK(cudaMemcpy(d_matrixArray + i, &matrixAddress, sizeof(double*), cudaMemcpyHostToDevice));
+        CUDA_CHECK(cudaMemcpy(d_invMatrixArray + i, &invMatrixAddress, sizeof(double*), cudaMemcpyHostToDevice));
     }
 
     int* d_pivotArray;
@@ -135,18 +134,18 @@ void computeInverseMatrices(
     CUDA_CHECK(cudaMalloc((void**)&d_pivotArray, batchSize * d * sizeof(int)));
     CUDA_CHECK(cudaMalloc((void**)&d_infoArray, batchSize * sizeof(int)));
 
-    CUBLAS_CHECK(cublasSgetrfBatched(handle, d, d_matrixArray, d, d_pivotArray, d_infoArray, batchSize));
+    CUBLAS_CHECK(cublasDgetrfBatched(handle, d, d_matrixArray, d, d_pivotArray, d_infoArray, batchSize));
     
     int * h_pivotArray = (int*)malloc(batchSize * d * sizeof(int));
-    float * h_matrixArray = (float*)malloc(batchSize * d * d * sizeof(float));
-    float * h_determinants = (float*)malloc(batchSize * sizeof(float));
+    double * h_matrixArray = (double*)malloc(batchSize * d * d * sizeof(double));
+    double * h_determinants = (double*)malloc(batchSize * sizeof(double));
 
     cudaMemcpy(h_pivotArray, d_pivotArray, batchSize * d * sizeof(int), cudaMemcpyDeviceToHost);
-    cudaMemcpy(h_matrixArray, d_matrices, batchSize * d * d * sizeof(float), cudaMemcpyDeviceToHost);
+    cudaMemcpy(h_matrixArray, d_matrices, batchSize * d * d * sizeof(double), cudaMemcpyDeviceToHost);
     
 
     for (int i = 0; i < batchSize; i++) {
-        float det = 1.0f;  // Inizializza a 1.0 per il prodotto
+        double det = 1.0f;  // Inizializza a 1.0 per il prodotto
         int swaps = 0;
 
         for (int j = 0; j < d; j++) {
@@ -169,14 +168,14 @@ void computeInverseMatrices(
     }
 
     // Copia i determinanti sul dispositivo
-    cudaMemcpy(d_determinants, h_determinants, batchSize * sizeof(float), cudaMemcpyHostToDevice);
+    cudaMemcpy(d_determinants, h_determinants, batchSize * sizeof(double), cudaMemcpyHostToDevice);
 
-    CUBLAS_CHECK(cublasSgetriBatched(handle, d, (const float**)d_matrixArray, d, d_pivotArray, d_invMatrixArray, d, d_infoArray, batchSize));
+    CUBLAS_CHECK(cublasDgetriBatched(handle, d, (const double**)d_matrixArray, d, d_pivotArray, d_invMatrixArray, d, d_infoArray, batchSize));
 
    /*  
     printf("Matrici inverse:\n");
-    float * h_invMatrixArray = (float*)malloc(batchSize * d * d * sizeof(float));
-    cudaMemcpy(h_invMatrixArray, d_invMatrices, batchSize * d * d * sizeof(float), cudaMemcpyDeviceToHost);
+    double * h_invMatrixArray = (double*)malloc(batchSize * d * d * sizeof(double));
+    cudaMemcpy(h_invMatrixArray, d_invMatrices, batchSize * d * d * sizeof(double), cudaMemcpyDeviceToHost);
 
     for (int i = 0; i < batchSize; i++) {
         printf("Matrice %d:\n", i + 1);
@@ -201,7 +200,7 @@ void computeInverseMatrices(
 int main() {
     const int d = 10;    // Cambia il valore per il numero di feature desiderato
     const int k = 5;    // Numero di cluster
-    const int maxIter = 2;
+    const int maxIter = 100;
     const char* fileName = "data.csv"; // Nome del file CSV
 
     FILE* file = fopen(fileName, "r");
@@ -216,7 +215,7 @@ int main() {
         N++;
     }
 
-    float* h_data = (float*)malloc(N * d * sizeof(float));
+    double* h_data = (double*)malloc(N * d * sizeof(double));
     if (h_data == NULL) {
         perror("Errore nell'allocazione della memoria per i dati");
         fclose(file);
@@ -243,8 +242,8 @@ int main() {
     fclose(file);
 
      // Calcolo dei valori minimi e massimi per ogni feature
-/*     float min_values[d];
-    float max_values[d];
+/*     double min_values[d];
+    double max_values[d];
     for (int j = 0; j < d; ++j) {
         min_values[j] = FLT_MAX;  // Impostiamo il valore minimo iniziale al massimo possibile
         max_values[j] = -FLT_MAX; // Impostiamo il valore massimo iniziale al minimo possibile
@@ -253,7 +252,7 @@ int main() {
     // Determiniamo i valori minimi e massimi per ciascuna feature
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < d; ++j) {
-            float value = h_data[i * d + j];
+            double value = h_data[i * d + j];
             if (value < min_values[j]) {
                 min_values[j] = value;
             }
@@ -271,8 +270,8 @@ int main() {
 /*     // Normalizzazione Min-Max dei dati
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < d; ++j) {
-            float min_value = min_values[j];
-            float max_value = max_values[j];
+            double min_value = min_values[j];
+            double max_value = max_values[j];
             if (max_value - min_value != 0) {
                 // Normalizziamo il valore nell'intervallo [0, 1]
                 h_data[i * d + j] = (h_data[i * d + j] - min_value) / (max_value - min_value);
@@ -283,14 +282,14 @@ int main() {
         }
     } */
 
-    float* h_means = (float*)malloc(k * d * sizeof(float));
-    float* h_covMatrices = (float*)malloc(k * d * d * sizeof(float));
-    float* h_weights = (float*)malloc(k * sizeof(float));
+    double* h_means = (double*)malloc(k * d * sizeof(double));
+    double* h_covMatrices = (double*)malloc(k * d * d * sizeof(double));
+    double* h_weights = (double*)malloc(k * sizeof(double));
 
     /* for (int i = 0; i < k * d; ++i) {
-        h_means[i] = (float)(rand() % 100) / 100.0;
+        h_means[i] = (double)(rand() % 100) / 100.0;
     } */
-    float feature_means[d];
+    double feature_means[d];
     for (int j = 0; j < d; ++j) {
         feature_means[j] = 0.0;
     }
@@ -307,7 +306,7 @@ int main() {
 
     for (int i = 0; i < k; ++i) {
         for (int j = 0; j < d; ++j) {
-            h_means[i * d + j] = feature_means[j] + (float)(rand() % 100) / 100.0; // 5 + (0, 1)
+            h_means[i * d + j] = feature_means[j] + (double)(rand() % 100) / 100.0; // 5 + (0, 1)
         }
     }
 
@@ -321,19 +320,19 @@ int main() {
         }
     }
 
-    float *d_data, *d_means, *d_covMatrices, *d_weights, *d_responsibilities, *d_invCovMatrices, *d_determinants;
-    CUDA_CHECK(cudaMalloc(&d_data, N * d * sizeof(float)));
-    CUDA_CHECK(cudaMalloc(&d_means, k * d * sizeof(float)));
-    CUDA_CHECK(cudaMalloc(&d_covMatrices, k * d * d * sizeof(float)));
-    CUDA_CHECK(cudaMalloc(&d_weights, k * sizeof(float)));
-    CUDA_CHECK(cudaMalloc(&d_responsibilities, N * k * sizeof(float)));
-    CUDA_CHECK(cudaMalloc(&d_invCovMatrices, k * d * d * sizeof(float)));
-    CUDA_CHECK(cudaMalloc(&d_determinants, k * sizeof(float)));
+    double *d_data, *d_means, *d_covMatrices, *d_weights, *d_responsibilities, *d_invCovMatrices, *d_determinants;
+    CUDA_CHECK(cudaMalloc(&d_data, N * d * sizeof(double)));
+    CUDA_CHECK(cudaMalloc(&d_means, k * d * sizeof(double)));
+    CUDA_CHECK(cudaMalloc(&d_covMatrices, k * d * d * sizeof(double)));
+    CUDA_CHECK(cudaMalloc(&d_weights, k * sizeof(double)));
+    CUDA_CHECK(cudaMalloc(&d_responsibilities, N * k * sizeof(double)));
+    CUDA_CHECK(cudaMalloc(&d_invCovMatrices, k * d * d * sizeof(double)));
+    CUDA_CHECK(cudaMalloc(&d_determinants, k * sizeof(double)));
 
-    CUDA_CHECK(cudaMemcpy(d_data, h_data, N * d * sizeof(float), cudaMemcpyHostToDevice));
-    CUDA_CHECK(cudaMemcpy(d_means, h_means, k * d * sizeof(float), cudaMemcpyHostToDevice));
-    CUDA_CHECK(cudaMemcpy(d_covMatrices, h_covMatrices, k * d * d * sizeof(float), cudaMemcpyHostToDevice));
-    CUDA_CHECK(cudaMemcpy(d_weights, h_weights, k * sizeof(float), cudaMemcpyHostToDevice));
+    CUDA_CHECK(cudaMemcpy(d_data, h_data, N * d * sizeof(double), cudaMemcpyHostToDevice));
+    CUDA_CHECK(cudaMemcpy(d_means, h_means, k * d * sizeof(double), cudaMemcpyHostToDevice));
+    CUDA_CHECK(cudaMemcpy(d_covMatrices, h_covMatrices, k * d * d * sizeof(double), cudaMemcpyHostToDevice));
+    CUDA_CHECK(cudaMemcpy(d_weights, h_weights, k * sizeof(double), cudaMemcpyHostToDevice));
 
     cublasHandle_t handle;
     CUBLAS_CHECK(cublasCreate(&handle));
@@ -358,8 +357,9 @@ int main() {
             d_weights, d, k, N);
         cudaDeviceSynchronize();
 
+        /* 
         // print weights
-        CUDA_CHECK(cudaMemcpy(h_weights, d_weights, k * sizeof(float), cudaMemcpyDeviceToHost));
+        CUDA_CHECK(cudaMemcpy(h_weights, d_weights, k * sizeof(double), cudaMemcpyDeviceToHost));
         printf("Weights:\n");
         for (int i = 0; i < k; ++i) {
             printf("%f ", h_weights[i]);
@@ -367,8 +367,8 @@ int main() {
         printf("\n");
 
         // print responsibilities
-        float* h_responsibilities = (float*)malloc(N * k * sizeof(float));
-        CUDA_CHECK(cudaMemcpy(h_responsibilities, d_responsibilities, N * k * sizeof(float), cudaMemcpyDeviceToHost));
+        double* h_responsibilities = (double*)malloc(N * k * sizeof(double));
+        CUDA_CHECK(cudaMemcpy(h_responsibilities, d_responsibilities, N * k * sizeof(double), cudaMemcpyDeviceToHost));
         printf("Responsibilities:\n");
         for (int i = 0; i < N; ++i) {
             for (int j = 0; j < k; ++j) {
@@ -381,14 +381,14 @@ int main() {
 
         // print means
         printf("\n");
-        CUDA_CHECK(cudaMemcpy(h_means, d_means, k * d * sizeof(float), cudaMemcpyDeviceToHost));
+        CUDA_CHECK(cudaMemcpy(h_means, d_means, k * d * sizeof(double), cudaMemcpyDeviceToHost));
         printf("Means:\n");
         for (int i = 0; i < k; ++i) {
             for (int j = 0; j < d; ++j) {
                 printf("%f ", h_means[i * d + j]);
             }
             printf("\n");
-        }
+        } */
 
 
     }
@@ -401,9 +401,9 @@ int main() {
     CUDA_CHECK(cudaEventElapsedTime(&totalTime, start, stop));
     printf("Total time: %f s\n\n", totalTime / 1000.0);
 
-    CUDA_CHECK(cudaMemcpy(h_means, d_means, k * d * sizeof(float), cudaMemcpyDeviceToHost));
-    CUDA_CHECK(cudaMemcpy(h_covMatrices, d_covMatrices, k * d * d * sizeof(float), cudaMemcpyDeviceToHost));
-    CUDA_CHECK(cudaMemcpy(h_weights, d_weights, k * sizeof(float), cudaMemcpyDeviceToHost));
+    CUDA_CHECK(cudaMemcpy(h_means, d_means, k * d * sizeof(double), cudaMemcpyDeviceToHost));
+    CUDA_CHECK(cudaMemcpy(h_covMatrices, d_covMatrices, k * d * d * sizeof(double), cudaMemcpyDeviceToHost));
+    CUDA_CHECK(cudaMemcpy(h_weights, d_weights, k * sizeof(double), cudaMemcpyDeviceToHost));
 
     printf("Risultati finali:\n");
     for (int i = 0; i < k; ++i) {
