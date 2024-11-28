@@ -21,43 +21,53 @@ __global__ void computeResponsibilities(
     float* responsibilities, int d, int k, int N) {
 
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
-    if (idx >= N) return;
+    // if (idx >= N) return;
     
-    float sum = 0.0; 
-    float diff[32];
-    float temp[32];
 
-    for (int cluster = 0; cluster < k; ++cluster) {
-        for (int i = 0; i < d; ++i) {
-            diff[i] = data[idx * d + i] - means[cluster * d + i];
-        }
-        // Calcola il prodotto tra la matrice inversa e il vettore differenza
-        for (int i = 0; i < d; ++i) {
-            temp[i] = 0.0;
+    for (int i = idx; i < N; i += gridDim.x * blockDim.x) {
+        float sum = 0.0f; 
+        float diff[32];
+        float temp[32];
+
+        for (int cluster = 0; cluster < k; ++cluster) {
+            // Calcola la differenza data - mean per il cluster
             for (int j = 0; j < d; ++j) {
-                temp[i] += invCovMatrices[cluster * d * d + i * d + j] * diff[j];
+                diff[j] = data[i * d + j] - means[cluster * d + j];
             }
-        }
-        // Calcola il prodotto tra il vettore differenza e il vettore risultante
-        float mahalanobis = 0.0;
-        for (int i = 0; i < d; ++i) {
-            mahalanobis += diff[i] * temp[i];
+
+            // Calcola il prodotto invCovMatrix * diff
+            for (int j = 0; j < d; ++j) {
+                temp[j] = 0.0f;
+                for (int l = 0; l < d; ++l) {
+                    temp[j] += invCovMatrices[cluster * d * d + j * d + l] * diff[l];
+                }
+            }
+
+            // Calcola la distanza di Mahalanobis
+            float mahalanobis = 0.0f;
+            for (int j = 0; j < d; ++j) {
+                mahalanobis += diff[j] * temp[j];
+            }
+
+            // Calcola la verosimiglianza
+            float likelihood = expf(-0.5f * mahalanobis) / 
+                                sqrtf(powf(2 * M_PI, d) * determinants[cluster]);
+
+            // Calcola la responsabilità pesata
+            responsibilities[i * k + cluster] = weights[cluster] * likelihood;
+            sum += responsibilities[i * k + cluster];
         }
 
-        float likelihood = expf(-0.5 * mahalanobis) / sqrtf(powf(2 * M_PI, d) * determinants[cluster]);
-        responsibilities[idx * k + cluster] = weights[cluster] * likelihood;
-        sum += responsibilities[idx * k + cluster];
+        // Normalizzazione delle responsabilità
+        for (int cluster = 0; cluster < k; ++cluster) {
+            // if sum is near 0, set the responsibility to 0
+            if (sum == 0) {
+                responsibilities[i * k + cluster] = 0.0;
+            } else {
+                responsibilities[i * k + cluster] /= sum;
+            }
+        } 
     }
-
-
-   for (int cluster = 0; cluster < k; ++cluster) {
-        // if sum is near 0, set the responsibility to 0
-        if (sum == 0) {
-            responsibilities[idx * k + cluster] = 0.0;
-        } else {
-            responsibilities[idx * k + cluster] /= sum;
-        }
-    } 
 }
 
 __global__ void mStep(
@@ -74,7 +84,7 @@ __global__ void mStep(
     }
 
     for (int idx = 0; idx < N; ++idx) {
-        float r = responsibilities[idx * k + cluster]; 
+        float r = responsibilities[idx * k + cluster];
         weightSum += r;
         for (int i = 0; i < d; ++i) {
             means[cluster * d + i] += r * data[idx * d + i];
@@ -203,6 +213,9 @@ int main() {
     const int k = 5;    // Numero di cluster
     const int maxIter = 2;
     const char* fileName = "data.csv"; // Nome del file CSV
+    int threadsPerBlock = 256;
+    int dataPerThread = 100;
+
 
     FILE* file = fopen(fileName, "r");
     if (file == NULL) {
@@ -287,6 +300,9 @@ int main() {
     float* h_covMatrices = (float*)malloc(k * d * d * sizeof(float));
     float* h_weights = (float*)malloc(k * sizeof(float));
 
+   /*  int maxBlocks;
+    cudaDeviceGetAttribute(&maxBlocks, cudaDevAttrMultiProcessorCount, 0); */
+   
     /* for (int i = 0; i < k * d; ++i) {
         h_means[i] = (float)(rand() % 100) / 100.0;
     } */
@@ -343,12 +359,27 @@ int main() {
     CUDA_CHECK(cudaEventCreate(&stop));
     // Avvio temporizzazione totale
     CUDA_CHECK(cudaEventRecord(start));
+
+
+    int totalThreads = (N + dataPerThread - 1) / dataPerThread;
+    //  int numBlocks = (totalThreads + threadsPerBlock - 1) / threadsPerBlock;
+    int numBlocks = (N + threadsPerBlock * dataPerThread - 1) / (threadsPerBlock * dataPerThread);
+    printf("Numero di blocchi: %d\n", numBlocks);
+    printf("Numero di thread per blocco: %d\n", threadsPerBlock);
+    printf("Numero totale di thread: %d\n", totalThreads);
+    printf("Numero di dati per thread: %d\n", dataPerThread);
+
+    int numSMs;
+    cudaDeviceGetAttribute(&numSMs, cudaDevAttrMultiProcessorCount, 0);
+    printf("Numero di SMs: %d\n", numSMs);
+
     for (int iter = 0; iter < maxIter; ++iter) {
         // printf("Iterazione %d\n", iter + 1);
+
         computeInverseMatrices(handle, d_covMatrices, d, k, d_invCovMatrices, d_determinants);
         cudaDeviceSynchronize();
  
-        computeResponsibilities<<<(N + 255) / 256, 256>>>(
+        computeResponsibilities<<<numBlocks, threadsPerBlock/* (N + 255) / 256, 256 */>>>(
             d_data, d_means, d_invCovMatrices, d_determinants, d_weights,
             d_responsibilities, d, k, N);
         cudaDeviceSynchronize();
@@ -358,38 +389,54 @@ int main() {
             d_weights, d, k, N);
         cudaDeviceSynchronize();
 
-        // print weights
-        CUDA_CHECK(cudaMemcpy(h_weights, d_weights, k * sizeof(float), cudaMemcpyDeviceToHost));
-        printf("Weights:\n");
-        for (int i = 0; i < k; ++i) {
-            printf("%f ", h_weights[i]);
-        }
-        printf("\n");
-
-        // print responsibilities
+/* 
         float* h_responsibilities = (float*)malloc(N * k * sizeof(float));
         CUDA_CHECK(cudaMemcpy(h_responsibilities, d_responsibilities, N * k * sizeof(float), cudaMemcpyDeviceToHost));
-        printf("Responsibilities:\n");
-        for (int i = 0; i < N; ++i) {
-            for (int j = 0; j < k; ++j) {
-                printf("%f ", h_responsibilities[i * k + j]);
-            }
-            printf("\n");
-        }
-
-        free(h_responsibilities);
-
-        // print means
-        printf("\n");
         CUDA_CHECK(cudaMemcpy(h_means, d_means, k * d * sizeof(float), cudaMemcpyDeviceToHost));
-        printf("Means:\n");
-        for (int i = 0; i < k; ++i) {
-            for (int j = 0; j < d; ++j) {
-                printf("%f ", h_means[i * d + j]);
+        CUDA_CHECK(cudaMemcpy(h_covMatrices, d_covMatrices, k * d * d * sizeof(float), cudaMemcpyDeviceToHost));
+        CUDA_CHECK(cudaMemcpy(h_weights, d_weights, k * sizeof(float), cudaMemcpyDeviceToHost));
+        // print first responsibility, first mean, first covariance matrix and first weight
+         printf("\n");
+          printf("\n");
+
+        printf("Data 1: ");
+        for (int j = 0; j < d; ++j) {
+            printf("%f ", h_data[j]);
+        }
+        printf("\n");
+        printf("Responsibility 1: ");
+        for (int j = 0; j < k; ++j) {
+            printf("%f ", h_responsibilities[j]);
+        }
+        printf("\n");
+        printf("Mean 1: ");
+        for (int j = 0; j < d; ++j) {
+            printf("%f ", h_means[j]);
+        }
+        printf("\n");
+        printf("Covariance Matrix 1:\n");
+        for (int j = 0; j < d; ++j) {
+            for (int l = 0; l < d; ++l) {
+                printf("%f ", h_covMatrices[j * d + l]);
+            }
+            printf("\n");
+        }
+        printf("Inv Covariance Matrix 1:\n");
+        float* h_invCovMatrices = (float*)malloc(k * d * d * sizeof(float));
+        CUDA_CHECK(cudaMemcpy(h_invCovMatrices, d_invCovMatrices, k * d * d * sizeof(float), cudaMemcpyDeviceToHost));
+        for (int j = 0; j < d; ++j) {
+            for (int l = 0; l < d; ++l) {
+                printf("%f ", h_invCovMatrices[j * d + l]);
             }
             printf("\n");
         }
 
+        
+        printf("Weight 1: %f\n", h_weights[0]);
+        free(h_responsibilities);
+        printf("\n");
+        printf("\n");
+         */
 
     }
 
