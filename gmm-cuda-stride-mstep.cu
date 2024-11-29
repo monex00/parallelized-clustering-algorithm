@@ -260,7 +260,9 @@ int main() {
     const int maxIter = 100;
     const char* fileName = "data.csv"; // Nome del file CSV
     int threadsPerBlock = 256;
-    int dataPerThread = 1;
+    int dataPerThread = 100;
+    const double epsilon = 1e-9;
+    double maxChange = 0.0;
 
 
     FILE* file = fopen(fileName, "r");
@@ -308,6 +310,9 @@ int main() {
     // double* h_local_means = (double*)malloc(numBlocks* threadsPerBlock * k * d * sizeof(double));
     double* h_covMatrices = (double*)malloc(k * d * d * sizeof(double));
     double* h_weights = (double*)malloc(k * sizeof(double));
+    double* prev_h_means = (double*)malloc(k * d * sizeof(double));
+    double* prev_h_covMatrices = (double*)malloc(k * d * d * sizeof(double));
+    double* prev_h_weights = (double*)malloc(k * sizeof(double));
     // double* h_local_weights = (double*)malloc(threadsPerBlock * numBlocks * k * sizeof(double));
     // double* h_local_cov_matrixes = (double*)malloc(threadsPrBlock * numBlocks * k * d * d * sizeof(double));
 
@@ -342,6 +347,15 @@ int main() {
         }
     }
 
+    // print intial means
+    printf("Means:\n");
+    for (int i = 0; i < k; ++i) {
+        for (int j = 0; j < d; ++j) {
+            printf("%.9f ", h_means[i * d + j]);
+        }
+        printf("\n");
+    }
+
     double *d_data, *d_means, *d_covMatrices, *d_weights, *d_responsibilities, *d_invCovMatrices, *d_determinants, *d_local_means, *d_local_weights, *d_local_cov_matrixes;
     CUDA_CHECK(cudaMalloc(&d_data, N * d * sizeof(double)));
     CUDA_CHECK(cudaMalloc(&d_means, k * d * sizeof(double)));
@@ -373,7 +387,7 @@ int main() {
     printf("Numero totale di thread: %d\n", totalThreads);
     printf("Numero di dati per thread: %d\n", dataPerThread);
 
-
+        
     for (int iter = 0; iter < maxIter; ++iter) {
         // printf("Iterazione %d\n", iter + 1); 
 
@@ -384,6 +398,13 @@ int main() {
             d_data, d_means, d_invCovMatrices, d_determinants, d_weights,
             d_responsibilities, d_local_means, d_local_weights, d, k, N);
         cudaDeviceSynchronize();
+
+        // copia means e weights e covmatrix h nei valori precedenti
+        memcpy(prev_h_means, h_means, k * d * sizeof(double));
+        memcpy(prev_h_covMatrices, h_covMatrices, k * d * d * sizeof(double));
+        memcpy(prev_h_weights, h_weights, k * sizeof(double));      
+         
+        
 
         // copy back local means and weights
         double* h_local_means = (double*)malloc(numBlocks * threadsPerBlock * k * d * sizeof(double));
@@ -491,12 +512,48 @@ int main() {
             h_weights[i] /= N;
         }
 
+        // check if prev local means and weights and covMatrix the diff is less than epsilon
+        maxChange = 0.0;
+        for (int i = 0; i < k; ++i) {
+            for (int j = 0; j < d; ++j) {
+                double diff = fabs(h_means[i * d + j] - prev_h_means[i * d + j]);
+                if (diff > maxChange) {
+                    maxChange = diff;
+                }
+            }
+        }
+        
+        for (int i = 0; i < k; ++i) {
+            for (int j = 0; j < d; ++j) {
+                for (int l = 0; l < d; ++l) {
+                    double diff = fabs(h_covMatrices[i * d * d + j * d + l] - prev_h_covMatrices[i * d * d + j * d + l]);
+                    if (diff > maxChange) {
+                        maxChange = diff;
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < k; ++i) {
+            double diff = fabs(h_weights[i] - prev_h_weights[i]);
+            if (diff > maxChange) {
+                maxChange = diff;
+            }
+        }
+
+        
+
         CUDA_CHECK(cudaMemcpy(d_covMatrices, h_covMatrices, k * d * d * sizeof(double), cudaMemcpyHostToDevice));
         CUDA_CHECK(cudaMemcpy(d_weights, h_weights, k * sizeof(double), cudaMemcpyHostToDevice));
 
 
         free(h_local_cov_matrixes);
         free(h_local_weights);
+
+        if (maxChange < epsilon) {
+            printf("Convergenza raggiunta dopo %d iterazioni\n", iter + 1);
+            break;
+        }
     }
 
     // Fine temporizzazione totale
@@ -538,6 +595,9 @@ int main() {
     cudaFree(d_local_means);
     cudaFree(d_local_weights);
     cudaFree(d_local_cov_matrixes);
+    free(prev_h_means);
+    free(prev_h_covMatrices);
+    free(prev_h_weights);
     free(h_data);
     free(h_means);
     free(h_covMatrices);
