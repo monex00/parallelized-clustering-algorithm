@@ -1,0 +1,199 @@
+Tempo E-step (Iterazione 1): 0.0104796 secondi.
+Tempo M-step (Iterazione 1): 0.00781837 secondi.
+Tempo Iterazione 1: 0.0184229 secondi.
+Tempo E-step (Iterazione 2): 0.00256843 secondi.
+Tempo M-step (Iterazione 2): 0.00173285 secondi.
+Tempo Iterazione 2: 0.00435345 secondi.
+Tempo E-step (Iterazione 3): 0.00255733 secondi.
+Tempo M-step (Iterazione 3): 0.00175549 secondi.
+Tempo Iterazione 3: 0.00436349 secondi.
+Tempo E-step (Iterazione 4): 0.00253568 secondi.
+Tempo M-step (Iterazione 4): 0.00172243 secondi.
+Tempo Iterazione 4: 0.0043099 secondi.
+Tempo E-step (Iterazione 5): 0.00253629 secondi.
+Tempo M-step (Iterazione 5): 0.00170233 secondi.
+Tempo Iterazione 5: 0.00428863 secondi.
+Tempo E-step (Iterazione 6): 0.0025164 secondi.
+Tempo M-step (Iterazione 6): 0.0016902 secondi.
+Tempo Iterazione 6: 0.00426162 secondi.
+Tempo E-step (Iterazione 7): 0.00252422 secondi.
+Tempo M-step (Iterazione 7): 0.00163881 secondi.
+Tempo Iterazione 7: 0.00421399 secondi.
+Tempo E-step (Iterazione 8): 0.0025112 secondi.
+Tempo M-step (Iterazione 8): 0.00164536 secondi.
+Tempo Iterazione 8: 0.00420054 secondi.
+Tempo E-step (Iterazione 9): 0.00250114 secondi.
+Tempo M-step (Iterazione 9): 0.00159178 secondi.
+Tempo Iterazione 9: 0.004137 secondi.
+Tempo E-step (Iterazione 10): 0.00250408 secondi.
+Tempo M-step (Iterazione 10): 0.00165484 secondi.
+Tempo Iterazione 10: 0.00420363 secondi.
+Tempo E-step (Iterazione 11): 0.00250681 secondi.
+Tempo M-step (Iterazione 11): 0.00158457 secondi.
+Tempo Iterazione 11: 0.00413474 secondi.
+Tempo E-step (Iterazione 12): 0.00250634 secondi.
+Tempo M-step (Iterazione 12): 0.00159686 secondi.
+Tempo Iterazione 12: 0.0041475 secondi.
+Tempo E-step (Iterazione 13): 0.00251392 secondi.
+Tempo M-step (Iterazione 13): 0.00154371 secondi.
+Tempo Iterazione 13: 0.00410558 secondi.
+Tempo E-step (Iterazione 14): 0.00250143 secondi.
+Tempo M-step (Iterazione 14): 0.00154418 secondi.
+Tempo Iterazione 14: 0.00409463 secondi.
+Tempo E-step (Iterazione 15): 0.00252513 secondi.
+Tempo M-step (Iterazione 15): 0.00159217 secondi.
+Tempo Iterazione 15: 0.00416177 secondi.
+Tempo E-step (Iterazione 16): 0.00257186 secondi.
+Tempo M-step (Iterazione 16): 0.00148529 secondi.
+Tempo Iterazione 16: 0.00410339 secondi.
+Tempo E-step (Iterazione 17): 0.00254874 secondi.
+Tempo M-step (Iterazione 17): 0.00149188 secondi.
+Tempo Iterazione 17: 0.00408568 secondi.
+Tempo E-step (Iterazione 18): 0.00251407 secondi.
+Tempo M-step (Iterazione 18): 0.00150229 secondi.
+Tempo Iterazione 18: 0.00406138 secondi.
+Tempo E-step (Iterazione 19): 0.00251588 secondi.
+Tempo M-step (Iterazione 19): 0.00149774 secondi.
+Tempo Iterazione 19: 0.00405924 secondi.
+Tempo E-step (Iterazione 20): 0.00251218 secondi.
+Tempo M-step (Iterazione 20): 0.00148396 secondi.
+Tempo Iterazione 20: 0.00404575 secondi.
+0.112865
+Tempo totale E-step: 0.0584507 secondi.
+Tempo totale M-step: 0.0382751 secondi.
+Risultati finali:
+Cluster 1:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 2:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 3:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 4:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 5:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 6:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 7:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 8:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 9:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 10:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 11:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 12:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 13:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 14:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+
+Cluster 15:
+Mean:
+496565
+485800
+Covariance:
+ 3.8655e+10 1.31966e+10
+1.31966e+10 3.95689e+10
+Weisght: 0.0666667
+

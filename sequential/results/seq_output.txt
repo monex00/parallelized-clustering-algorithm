@@ -1,0 +1,1382 @@
+Tempo E-step: 0.0363811 secondi
+Tempo M-step: 0.00607258 secondi
+Tempo iterazione 1: 0.0424585 secondi
+Cluster 1:
+Mean:
+ 153032
+44919.7
+Covariance:
+ 3.64189e+09 -1.47627e+09
+-1.47627e+09  7.94858e+08
+Weight: 0.0666667
+
+Cluster 2:
+Mean:
+ 153045
+44904.6
+Covariance:
+ 3.64177e+09 -1.47604e+09
+-1.47604e+09  7.94485e+08
+Weight: 0.0666667
+
+Cluster 3:
+Mean:
+ 153014
+44927.1
+Covariance:
+ 3.64284e+09 -1.47698e+09
+-1.47698e+09  7.95288e+08
+Weight: 0.0666667
+
+Cluster 4:
+Mean:
+ 153098
+44878.6
+Covariance:
+ 3.64645e+09 -1.47813e+09
+-1.47813e+09  7.95409e+08
+Weight: 0.0666667
+
+Cluster 5:
+Mean:
+ 153108
+44885.5
+Covariance:
+ 3.64832e+09 -1.47782e+09
+-1.47782e+09  7.94965e+08
+Weight: 0.0666667
+
+Cluster 6:
+Mean:
+153017
+ 44928
+Covariance:
+ 3.64262e+09 -1.47691e+09
+-1.47691e+09  7.95347e+08
+Weight: 0.0666667
+
+Cluster 7:
+Mean:
+ 153019
+44924.6
+Covariance:
+ 3.64247e+09 -1.47672e+09
+-1.47672e+09  7.95125e+08
+Weight: 0.0666667
+
+Cluster 8:
+Mean:
+ 153011
+44927.9
+Covariance:
+ 3.64309e+09 -1.47712e+09
+-1.47712e+09  7.95342e+08
+Weight: 0.0666667
+
+Cluster 9:
+Mean:
+153051
+ 44899
+Covariance:
+ 3.64189e+09 -1.47611e+09
+-1.47611e+09  7.94515e+08
+Weight: 0.0666667
+
+Cluster 10:
+Mean:
+ 153091
+44877.1
+Covariance:
+ 3.64534e+09 -1.47798e+09
+-1.47798e+09  7.95522e+08
+Weight: 0.0666667
+
+Cluster 11:
+Mean:
+ 152972
+44909.9
+Covariance:
+ 3.64873e+09 -1.47667e+09
+-1.47667e+09   7.9454e+08
+Weight: 0.0666667
+
+Cluster 12:
+Mean:
+152991
+ 44923
+Covariance:
+ 3.64544e+09 -1.47747e+09
+-1.47747e+09  7.95032e+08
+Weight: 0.0666667
+
+Cluster 13:
+Mean:
+ 153110
+44883.5
+Covariance:
+ 3.64863e+09 -1.47807e+09
+-1.47807e+09   7.9508e+08
+Weight: 0.0666667
+
+Cluster 14:
+Mean:
+ 153035
+44918.6
+Covariance:
+3.64182e+09 -1.4762e+09
+-1.4762e+09 7.94811e+08
+Weight: 0.0666667
+
+Cluster 15:
+Mean:
+ 153064
+44888.7
+Covariance:
+ 3.64253e+09 -1.47655e+09
+-1.47655e+09  7.94812e+08
+Weight: 0.0666667
+
+Tempo E-step: 0.0343853 secondi
+Tempo M-step: 0.0026711 secondi
+Tempo iterazione 2: 0.037058 secondi
+Cluster 1:
+Mean:
+ 153043
+44907.9
+Covariance:
+ 3.64402e+09 -1.47691e+09
+-1.47691e+09  7.94965e+08
+Weight: 0.0666708
+
+Cluster 2:
+Mean:
+ 153046
+44905.5
+Covariance:
+ 3.64379e+09 -1.47683e+09
+-1.47683e+09  7.94926e+08
+Weight: 0.0666763
+
+Cluster 3:
+Mean:
+ 153042
+44908.2
+Covariance:
+ 3.64413e+09 -1.47695e+09
+-1.47695e+09  7.94987e+08
+Weight: 0.0666685
+
+Cluster 4:
+Mean:
+ 153047
+44903.7
+Covariance:
+ 3.64416e+09 -1.47699e+09
+-1.47699e+09  7.94999e+08
+Weight: 0.0666699
+
+Cluster 5:
+Mean:
+ 153043
+44906.6
+Covariance:
+3.64452e+09 -1.4771e+09
+-1.4771e+09  7.9505e+08
+Weight: 0.066661
+
+Cluster 6:
+Mean:
+ 153042
+44908.7
+Covariance:
+ 3.64419e+09 -1.47697e+09
+-1.47697e+09  7.94998e+08
+Weight: 0.0666671
+
+Cluster 7:
+Mean:
+ 153043
+44908.1
+Covariance:
+ 3.64407e+09 -1.47693e+09
+-1.47693e+09  7.94976e+08
+Weight: 0.0666696
+
+Cluster 8:
+Mean:
+ 153042
+44908.2
+Covariance:
+ 3.64414e+09 -1.47695e+09
+-1.47695e+09  7.94989e+08
+Weight: 0.0666682
+
+Cluster 9:
+Mean:
+ 153047
+44904.8
+Covariance:
+  3.6438e+09 -1.47684e+09
+-1.47684e+09  7.94929e+08
+Weight: 0.0666765
+
+Cluster 10:
+Mean:
+153048
+ 44903
+Covariance:
+ 3.64414e+09 -1.47698e+09
+-1.47698e+09     7.95e+08
+Weight: 0.0666708
+
+Cluster 11:
+Mean:
+153039
+ 44907
+Covariance:
+3.64611e+09 -1.4777e+09
+-1.4777e+09 7.95334e+08
+Weight: 0.066629
+
+Cluster 12:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64434e+09 -1.47703e+09
+-1.47703e+09  7.95019e+08
+Weight: 0.0666649
+
+Cluster 13:
+Mean:
+ 153044
+44906.1
+Covariance:
+  3.6445e+09 -1.47709e+09
+-1.47709e+09  7.95047e+08
+Weight: 0.0666616
+
+Cluster 14:
+Mean:
+ 153043
+44907.9
+Covariance:
+3.64401e+09 -1.4769e+09
+-1.4769e+09 7.94963e+08
+Weight: 0.0666709
+
+Cluster 15:
+Mean:
+ 153048
+44903.7
+Covariance:
+ 3.64392e+09 -1.47689e+09
+-1.47689e+09  7.94956e+08
+Weight: 0.0666748
+
+Tempo E-step: 0.0334175 secondi
+Tempo M-step: 0.00237436 secondi
+Tempo iterazione 3: 0.0357932 secondi
+Cluster 1:
+Mean:
+ 153044
+44906.5
+Covariance:
+ 3.64417e+09 -1.47697e+09
+-1.47697e+09  7.94993e+08
+Weight: 0.0666684
+
+Cluster 2:
+Mean:
+ 153045
+44906.1
+Covariance:
+ 3.64405e+09 -1.47693e+09
+-1.47693e+09  7.94973e+08
+Weight: 0.066671
+
+Cluster 3:
+Mean:
+ 153044
+44906.6
+Covariance:
+ 3.64422e+09 -1.47699e+09
+-1.47699e+09  7.95002e+08
+Weight: 0.0666673
+
+Cluster 4:
+Mean:
+153045
+ 44906
+Covariance:
+ 3.64419e+09 -1.47698e+09
+-1.47698e+09  7.94999e+08
+Weight: 0.0666682
+
+Cluster 5:
+Mean:
+ 153044
+44906.5
+Covariance:
+ 3.64437e+09 -1.47705e+09
+-1.47705e+09  7.95029e+08
+Weight: 0.0666642
+
+Cluster 6:
+Mean:
+ 153044
+44906.7
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95007e+08
+Weight: 0.0666667
+
+Cluster 7:
+Mean:
+ 153044
+44906.5
+Covariance:
+ 3.64419e+09 -1.47698e+09
+-1.47698e+09  7.94997e+08
+Weight: 0.0666679
+
+Cluster 8:
+Mean:
+ 153044
+44906.6
+Covariance:
+ 3.64422e+09 -1.47699e+09
+-1.47699e+09  7.95003e+08
+Weight: 0.0666673
+
+Cluster 9:
+Mean:
+153045
+ 44906
+Covariance:
+ 3.64405e+09 -1.47693e+09
+-1.47693e+09  7.94973e+08
+Weight: 0.0666711
+
+Cluster 10:
+Mean:
+ 153045
+44905.9
+Covariance:
+ 3.64418e+09 -1.47698e+09
+-1.47698e+09  7.94997e+08
+Weight: 0.0666685
+
+Cluster 11:
+Mean:
+ 153041
+44907.3
+Covariance:
+3.64506e+09 -1.4773e+09
+-1.4773e+09 7.95149e+08
+Weight: 0.0666501
+
+Cluster 12:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64429e+09 -1.47702e+09
+-1.47702e+09  7.95015e+08
+Weight: 0.066666
+
+Cluster 13:
+Mean:
+ 153044
+44906.5
+Covariance:
+ 3.64436e+09 -1.47704e+09
+-1.47704e+09  7.95027e+08
+Weight: 0.0666645
+
+Cluster 14:
+Mean:
+ 153044
+44906.5
+Covariance:
+ 3.64416e+09 -1.47697e+09
+-1.47697e+09  7.94992e+08
+Weight: 0.0666685
+
+Cluster 15:
+Mean:
+ 153045
+44905.9
+Covariance:
+ 3.64409e+09 -1.47694e+09
+-1.47694e+09  7.94981e+08
+Weight: 0.0666703
+
+Tempo E-step: 0.0334043 secondi
+Tempo M-step: 0.00239047 secondi
+Tempo iterazione 4: 0.0357961 secondi
+Cluster 1:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64422e+09 -1.47699e+09
+-1.47699e+09  7.95003e+08
+Weight: 0.0666674
+
+Cluster 2:
+Mean:
+ 153044
+44906.3
+Covariance:
+ 3.64417e+09 -1.47697e+09
+-1.47697e+09  7.94993e+08
+Weight: 0.0666686
+
+Cluster 3:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64424e+09  -1.477e+09
+ -1.477e+09 7.95006e+08
+Weight: 0.066667
+
+Cluster 4:
+Mean:
+ 153044
+44906.3
+Covariance:
+ 3.64423e+09 -1.47699e+09
+-1.47699e+09  7.95004e+08
+Weight: 0.0666673
+
+Cluster 5:
+Mean:
+ 153044
+44906.5
+Covariance:
+ 3.64431e+09 -1.47702e+09
+-1.47702e+09  7.95018e+08
+Weight: 0.0666656
+
+Cluster 6:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 7:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64423e+09 -1.47699e+09
+-1.47699e+09  7.95005e+08
+Weight: 0.0666672
+
+Cluster 8:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64424e+09  -1.477e+09
+ -1.477e+09 7.95007e+08
+Weight: 0.0666669
+
+Cluster 9:
+Mean:
+ 153044
+44906.2
+Covariance:
+ 3.64416e+09 -1.47697e+09
+-1.47697e+09  7.94993e+08
+Weight: 0.0666686
+
+Cluster 10:
+Mean:
+ 153044
+44906.3
+Covariance:
+ 3.64422e+09 -1.47699e+09
+-1.47699e+09  7.95003e+08
+Weight: 0.0666675
+
+Cluster 11:
+Mean:
+ 153043
+44906.8
+Covariance:
+ 3.64461e+09 -1.47713e+09
+-1.47713e+09   7.9507e+08
+Weight: 0.0666594
+
+Cluster 12:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64427e+09 -1.47701e+09
+-1.47701e+09  7.95012e+08
+Weight: 0.0666664
+
+Cluster 13:
+Mean:
+ 153044
+44906.4
+Covariance:
+  3.6443e+09 -1.47702e+09
+-1.47702e+09  7.95017e+08
+Weight: 0.0666657
+
+Cluster 14:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64422e+09 -1.47699e+09
+-1.47699e+09  7.95002e+08
+Weight: 0.0666675
+
+Cluster 15:
+Mean:
+ 153044
+44906.2
+Covariance:
+ 3.64418e+09 -1.47698e+09
+-1.47698e+09  7.94996e+08
+Weight: 0.0666683
+
+Tempo E-step: 0.0336396 secondi
+Tempo M-step: 0.00236236 secondi
+Tempo iterazione 5: 0.0360032 secondi
+Cluster 1:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64424e+09  -1.477e+09
+ -1.477e+09 7.95006e+08
+Weight: 0.066667
+
+Cluster 2:
+Mean:
+ 153044
+44906.3
+Covariance:
+ 3.64422e+09 -1.47699e+09
+-1.47699e+09  7.95002e+08
+Weight: 0.0666675
+
+Cluster 3:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95008e+08
+Weight: 0.0666668
+
+Cluster 4:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64424e+09  -1.477e+09
+ -1.477e+09 7.95007e+08
+Weight: 0.066667
+
+Cluster 5:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64428e+09 -1.47701e+09
+-1.47701e+09  7.95013e+08
+Weight: 0.0666662
+
+Cluster 6:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 7:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95007e+08
+Weight: 0.0666669
+
+Cluster 8:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95008e+08
+Weight: 0.0666668
+
+Cluster 9:
+Mean:
+ 153044
+44906.3
+Covariance:
+ 3.64422e+09 -1.47699e+09
+-1.47699e+09  7.95002e+08
+Weight: 0.0666675
+
+Cluster 10:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64424e+09  -1.477e+09
+ -1.477e+09 7.95006e+08
+Weight: 0.066667
+
+Cluster 11:
+Mean:
+ 153043
+44906.6
+Covariance:
+ 3.64441e+09 -1.47706e+09
+-1.47706e+09  7.95036e+08
+Weight: 0.0666635
+
+Cluster 12:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64426e+09 -1.47701e+09
+-1.47701e+09   7.9501e+08
+Weight: 0.0666665
+
+Cluster 13:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64428e+09 -1.47701e+09
+-1.47701e+09  7.95013e+08
+Weight: 0.0666663
+
+Cluster 14:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64424e+09  -1.477e+09
+ -1.477e+09 7.95006e+08
+Weight: 0.066667
+
+Cluster 15:
+Mean:
+ 153044
+44906.3
+Covariance:
+ 3.64422e+09 -1.47699e+09
+-1.47699e+09  7.95003e+08
+Weight: 0.0666674
+
+Tempo E-step: 0.0333546 secondi
+Tempo M-step: 0.00239032 secondi
+Tempo iterazione 6: 0.0357462 secondi
+Cluster 1:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95008e+08
+Weight: 0.0666668
+
+Cluster 2:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64424e+09  -1.477e+09
+ -1.477e+09 7.95006e+08
+Weight: 0.066667
+
+Cluster 3:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 4:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95008e+08
+Weight: 0.0666668
+
+Cluster 5:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64427e+09 -1.47701e+09
+-1.47701e+09  7.95011e+08
+Weight: 0.0666665
+
+Cluster 6:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 7:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95008e+08
+Weight: 0.0666668
+
+Cluster 8:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 9:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64424e+09  -1.477e+09
+ -1.477e+09 7.95006e+08
+Weight: 0.066667
+
+Cluster 10:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95008e+08
+Weight: 0.0666668
+
+Cluster 11:
+Mean:
+ 153044
+44906.5
+Covariance:
+ 3.64432e+09 -1.47703e+09
+-1.47703e+09  7.95021e+08
+Weight: 0.0666653
+
+Cluster 12:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64426e+09 -1.47701e+09
+-1.47701e+09   7.9501e+08
+Weight: 0.0666666
+
+Cluster 13:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64427e+09 -1.47701e+09
+-1.47701e+09  7.95011e+08
+Weight: 0.0666665
+
+Cluster 14:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95008e+08
+Weight: 0.0666668
+
+Cluster 15:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64424e+09  -1.477e+09
+ -1.477e+09 7.95007e+08
+Weight: 0.066667
+
+Tempo E-step: 0.0334741 secondi
+Tempo M-step: 0.00237293 secondi
+Tempo iterazione 7: 0.0358483 secondi
+Cluster 1:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 2:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95008e+08
+Weight: 0.0666668
+
+Cluster 3:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 4:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 5:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64426e+09 -1.47701e+09
+-1.47701e+09   7.9501e+08
+Weight: 0.0666666
+
+Cluster 6:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 7:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 8:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 9:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95008e+08
+Weight: 0.0666668
+
+Cluster 10:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 11:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64429e+09 -1.47702e+09
+-1.47702e+09  7.95014e+08
+Weight: 0.066666
+
+Cluster 12:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666666
+
+Cluster 13:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64426e+09 -1.47701e+09
+-1.47701e+09   7.9501e+08
+Weight: 0.0666666
+
+Cluster 14:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 15:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95008e+08
+Weight: 0.0666668
+
+Tempo E-step: 0.0333909 secondi
+Tempo M-step: 0.00239066 secondi
+Tempo iterazione 8: 0.0357828 secondi
+Cluster 1:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 2:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 3:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 4:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 5:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666666
+
+Cluster 6:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 7:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 8:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 9:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 10:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 11:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64427e+09 -1.47701e+09
+-1.47701e+09  7.95011e+08
+Weight: 0.0666664
+
+Cluster 12:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 13:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666666
+
+Cluster 14:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 15:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64425e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Tempo E-step: 0.0335755 secondi
+Tempo M-step: 0.00241231 secondi
+Tempo iterazione 9: 0.0359891 secondi
+Cluster 1:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 2:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 3:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 4:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 5:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666666
+
+Cluster 6:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 7:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 8:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 9:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 10:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 11:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64426e+09 -1.47701e+09
+-1.47701e+09   7.9501e+08
+Weight: 0.0666665
+
+Cluster 12:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 13:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 14:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 15:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Tempo E-step: 0.0333662 secondi
+Tempo M-step: 0.0023896 secondi
+Tempo iterazione 10: 0.0357631 secondi
+Cluster 1:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 2:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 3:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 4:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 5:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 6:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 7:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 8:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 9:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 10:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 11:
+Mean:
+ 153044
+44906.4
+Covariance:
+ 3.64426e+09 -1.47701e+09
+-1.47701e+09   7.9501e+08
+Weight: 0.0666666
+
+Cluster 12:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 13:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 14:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+Cluster 15:
+Mean:
+ 153044
+44906.4
+Covariance:
+3.64426e+09  -1.477e+09
+ -1.477e+09 7.95009e+08
+Weight: 0.0666667
+
+
+Tempo totale: 0.386105 secondi

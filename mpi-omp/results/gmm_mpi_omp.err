@@ -1,0 +1,7 @@
+gmm_mpi_omp.cpp: In function ‘int main(int, char**)’:
+gmm_mpi_omp.cpp:473:37: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘size_t’ {aka ‘long unsigned int’} [-Wformat=]
+  473 |                 fprintf(respFile, "%d,%d,%f\n", i, j, responsibilities(i, j));
+      |                                    ~^           ~
+      |                                     |           |
+      |                                     int         size_t {aka long unsigned int}
+      |                                    %ld

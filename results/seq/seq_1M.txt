@@ -1,0 +1,17 @@
+Tempo E-step: 18.5838 secondi
+Tempo M-step: 11.7699 secondi
+Tempo iterazione 1: 30.3538 secondi
+Tempo E-step: 18.5932 secondi
+Tempo M-step: 11.6254 secondi
+Tempo iterazione 2: 30.2187 secondi
+Tempo E-step: 18.5802 secondi
+Tempo M-step: 11.6691 secondi
+Tempo iterazione 3: 30.2493 secondi
+Tempo E-step: 18.5835 secondi
+Tempo M-step: 11.7078 secondi
+Tempo iterazione 4: 30.2914 secondi
+Tempo E-step: 18.6183 secondi
+Tempo M-step: 11.8208 secondi
+Tempo iterazione 5: 30.4391 secondi
+
+Tempo totale: 155.965 secondi
