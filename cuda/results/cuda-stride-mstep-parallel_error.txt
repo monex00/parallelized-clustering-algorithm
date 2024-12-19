@@ -1,0 +1,14 @@
+gmm-cuda-stride-reduction.cu(171): warning #177-D: variable "s_weights" was declared but never referenced
+      __attribute__((shared)) double s_weights[256];
+                                     ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+gmm-cuda-stride-reduction.cu(176): warning #177-D: variable "sumWeights" was declared but never referenced
+      double sumWeights = 0.0;
+             ^
+
+gmm-cuda-stride-reduction.cu(509): warning #177-D: variable "epsilon" was declared but never referenced
+      const double epsilon = 1e-9;
+                   ^
+

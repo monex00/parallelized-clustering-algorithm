@@ -1,0 +1,18 @@
+Compilazione con -O3
+Tempo E-step: 0.0813956 secondi
+Tempo M-step: 0.0536181 secondi
+Tempo iterazione 1: 0.135021 secondi
+Tempo E-step: 0.0790897 secondi
+Tempo M-step: 0.0368929 secondi
+Tempo iterazione 2: 0.115987 secondi
+Tempo E-step: 0.077005 secondi
+Tempo M-step: 0.034524 secondi
+Tempo iterazione 3: 0.111533 secondi
+Tempo E-step: 0.0768515 secondi
+Tempo M-step: 0.0333804 secondi
+Tempo iterazione 4: 0.110236 secondi
+Tempo E-step: 0.0767957 secondi
+Tempo M-step: 0.0335433 secondi
+Tempo iterazione 5: 0.110343 secondi
+
+Tempo totale: 0.862001 secondi

@@ -1,0 +1,314 @@
+Esecuzione con parametro: 10
+Numero di blocchi: 391
+Numero di thread per blocco: 256
+Numero totale di thread: 100000
+Numero di dati per thread: 10
+Total time: 7.894154 s
+
+Esecuzione con parametro: 30
+Numero di blocchi: 131
+Numero di thread per blocco: 256
+Numero totale di thread: 33334
+Numero di dati per thread: 30
+Total time: 5.850857 s
+
+Esecuzione con parametro: 50
+Numero di blocchi: 79
+Numero di thread per blocco: 256
+Numero totale di thread: 20000
+Numero di dati per thread: 50
+Total time: 3.599142 s
+
+Esecuzione con parametro: 70
+Numero di blocchi: 56
+Numero di thread per blocco: 256
+Numero totale di thread: 14286
+Numero di dati per thread: 70
+Total time: 1.639106 s
+
+Esecuzione con parametro: 90
+Numero di blocchi: 44
+Numero di thread per blocco: 256
+Numero totale di thread: 11112
+Numero di dati per thread: 90
+Total time: 1.636458 s
+
+Esecuzione con parametro: 110
+Numero di blocchi: 36
+Numero di thread per blocco: 256
+Numero totale di thread: 9091
+Numero di dati per thread: 110
+Total time: 1.346996 s
+
+Esecuzione con parametro: 130
+Numero di blocchi: 31
+Numero di thread per blocco: 256
+Numero totale di thread: 7693
+Numero di dati per thread: 130
+Total time: 1.362148 s
+
+Esecuzione con parametro: 150
+Numero di blocchi: 27
+Numero di thread per blocco: 256
+Numero totale di thread: 6667
+Numero di dati per thread: 150
+Total time: 1.404196 s
+
+Esecuzione con parametro: 170
+Numero di blocchi: 23
+Numero di thread per blocco: 256
+Numero totale di thread: 5883
+Numero di dati per thread: 170
+Total time: 1.439211 s
+
+Esecuzione con parametro: 190
+Numero di blocchi: 21
+Numero di thread per blocco: 256
+Numero totale di thread: 5264
+Numero di dati per thread: 190
+Total time: 1.577506 s
+
+Esecuzione con parametro: 210
+Numero di blocchi: 19
+Numero di thread per blocco: 256
+Numero totale di thread: 4762
+Numero di dati per thread: 210
+Total time: 1.526048 s
+
+Esecuzione con parametro: 230
+Numero di blocchi: 17
+Numero di thread per blocco: 256
+Numero totale di thread: 4348
+Numero di dati per thread: 230
+Total time: 1.531612 s
+
+Esecuzione con parametro: 250
+Numero di blocchi: 16
+Numero di thread per blocco: 256
+Numero totale di thread: 4000
+Numero di dati per thread: 250
+Total time: 1.543941 s
+
+Esecuzione con parametro: 270
+Numero di blocchi: 15
+Numero di thread per blocco: 256
+Numero totale di thread: 3704
+Numero di dati per thread: 270
+Total time: 1.569170 s
+
+Esecuzione con parametro: 290
+Numero di blocchi: 14
+Numero di thread per blocco: 256
+Numero totale di thread: 3449
+Numero di dati per thread: 290
+Total time: 1.613214 s
+
+Esecuzione con parametro: 310
+Numero di blocchi: 13
+Numero di thread per blocco: 256
+Numero totale di thread: 3226
+Numero di dati per thread: 310
+Total time: 1.720051 s
+
+Esecuzione con parametro: 330
+Numero di blocchi: 12
+Numero di thread per blocco: 256
+Numero totale di thread: 3031
+Numero di dati per thread: 330
+Total time: 1.747914 s
+
+Esecuzione con parametro: 350
+Numero di blocchi: 12
+Numero di thread per blocco: 256
+Numero totale di thread: 2858
+Numero di dati per thread: 350
+Total time: 1.750831 s
+
+Esecuzione con parametro: 370
+Numero di blocchi: 11
+Numero di thread per blocco: 256
+Numero totale di thread: 2703
+Numero di dati per thread: 370
+Total time: 1.835761 s
+
+Esecuzione con parametro: 390
+Numero di blocchi: 11
+Numero di thread per blocco: 256
+Numero totale di thread: 2565
+Numero di dati per thread: 390
+Total time: 1.905913 s
+
+Esecuzione con parametro: 410
+Numero di blocchi: 10
+Numero di thread per blocco: 256
+Numero totale di thread: 2440
+Numero di dati per thread: 410
+Total time: 1.936134 s
+
+Esecuzione con parametro: 430
+Numero di blocchi: 10
+Numero di thread per blocco: 256
+Numero totale di thread: 2326
+Numero di dati per thread: 430
+Total time: 1.965173 s
+
+Esecuzione con parametro: 450
+Numero di blocchi: 9
+Numero di thread per blocco: 256
+Numero totale di thread: 2223
+Numero di dati per thread: 450
+Total time: 2.117728 s
+
+Esecuzione con parametro: 470
+Numero di blocchi: 9
+Numero di thread per blocco: 256
+Numero totale di thread: 2128
+Numero di dati per thread: 470
+Total time: 2.143735 s
+
+Esecuzione con parametro: 490
+Numero di blocchi: 8
+Numero di thread per blocco: 256
+Numero totale di thread: 2041
+Numero di dati per thread: 490
+Total time: 2.346908 s
+
+Esecuzione con parametro: 510
+Numero di blocchi: 8
+Numero di thread per blocco: 256
+Numero totale di thread: 1961
+Numero di dati per thread: 510
+Total time: 2.345138 s
+
+Esecuzione con parametro: 530
+Numero di blocchi: 8
+Numero di thread per blocco: 256
+Numero totale di thread: 1887
+Numero di dati per thread: 530
+Total time: 2.273723 s
+
+Esecuzione con parametro: 550
+Numero di blocchi: 8
+Numero di thread per blocco: 256
+Numero totale di thread: 1819
+Numero di dati per thread: 550
+Total time: 2.348750 s
+
+Esecuzione con parametro: 570
+Numero di blocchi: 7
+Numero di thread per blocco: 256
+Numero totale di thread: 1755
+Numero di dati per thread: 570
+Total time: 2.553298 s
+
+Esecuzione con parametro: 590
+Numero di blocchi: 7
+Numero di thread per blocco: 256
+Numero totale di thread: 1695
+Numero di dati per thread: 590
+Total time: 2.559430 s
+
+Esecuzione con parametro: 610
+Numero di blocchi: 7
+Numero di thread per blocco: 256
+Numero totale di thread: 1640
+Numero di dati per thread: 610
+Total time: 2.533431 s
+
+Esecuzione con parametro: 630
+Numero di blocchi: 7
+Numero di thread per blocco: 256
+Numero totale di thread: 1588
+Numero di dati per thread: 630
+Total time: 2.496465 s
+
+Esecuzione con parametro: 650
+Numero di blocchi: 7
+Numero di thread per blocco: 256
+Numero totale di thread: 1539
+Numero di dati per thread: 650
+Total time: 2.479329 s
+
+Esecuzione con parametro: 670
+Numero di blocchi: 6
+Numero di thread per blocco: 256
+Numero totale di thread: 1493
+Numero di dati per thread: 670
+Total time: 2.852598 s
+
+Esecuzione con parametro: 690
+Numero di blocchi: 6
+Numero di thread per blocco: 256
+Numero totale di thread: 1450
+Numero di dati per thread: 690
+Total time: 2.823487 s
+
+Esecuzione con parametro: 710
+Numero di blocchi: 6
+Numero di thread per blocco: 256
+Numero totale di thread: 1409
+Numero di dati per thread: 710
+Total time: 2.765764 s
+
+Esecuzione con parametro: 730
+Numero di blocchi: 6
+Numero di thread per blocco: 256
+Numero totale di thread: 1370
+Numero di dati per thread: 730
+Total time: 2.774617 s
+
+Esecuzione con parametro: 750
+Numero di blocchi: 6
+Numero di thread per blocco: 256
+Numero totale di thread: 1334
+Numero di dati per thread: 750
+Total time: 2.777673 s
+
+Esecuzione con parametro: 770
+Numero di blocchi: 6
+Numero di thread per blocco: 256
+Numero totale di thread: 1299
+Numero di dati per thread: 770
+Total time: 2.774452 s
+
+Esecuzione con parametro: 790
+Numero di blocchi: 5
+Numero di thread per blocco: 256
+Numero totale di thread: 1266
+Numero di dati per thread: 790
+Total time: 3.217547 s
+
+Esecuzione con parametro: 810
+Numero di blocchi: 5
+Numero di thread per blocco: 256
+Numero totale di thread: 1235
+Numero di dati per thread: 810
+Total time: 3.279957 s
+
+Esecuzione con parametro: 830
+Numero di blocchi: 5
+Numero di thread per blocco: 256
+Numero totale di thread: 1205
+Numero di dati per thread: 830
+Total time: 3.326222 s
+
+Esecuzione con parametro: 850
+Numero di blocchi: 5
+Numero di thread per blocco: 256
+Numero totale di thread: 1177
+Numero di dati per thread: 850
+Total time: 3.284866 s
+
+Esecuzione con parametro: 870
+Numero di blocchi: 5
+Numero di thread per blocco: 256
+Numero totale di thread: 1150
+Numero di dati per thread: 870
+Total time: 3.230898 s
+
+Esecuzione con parametro: 890
+Numero di blocchi: 5
+Numero di thread per blocco: 256
+Numero totale di thread: 1124
+Numero di dati per thread: 890
+Total time: 3.306975 s

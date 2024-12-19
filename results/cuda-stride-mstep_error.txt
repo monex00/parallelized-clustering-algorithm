@@ -1,4 +1,0 @@
-gmm-cuda-stride-mstep.cu(107): warning #177-D: variable "diff_j" was declared but never referenced
-
-gmm-cuda-stride-mstep.cu(108): warning #177-D: variable "diff_l" was declared but never referenced
-
