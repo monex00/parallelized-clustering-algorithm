@@ -129,7 +129,7 @@ MatrixXd computeResponsibilities(const std::vector<VectorXd> &data, const std::v
     return responsibilities;
 }
 
-/* void updateParameters(const std::vector<VectorXd> &localData,int globalDataSize, const MatrixXd &responsibilities,
+void updateParameters(const std::vector<VectorXd> &localData,int globalDataSize, const MatrixXd &responsibilities,
                       std::vector<VectorXd> &means, std::vector<MatrixXd> &covariances,
                       std::vector<double> &weights, int k, int rank, int size, int numFeatures) {
     std::vector<double> localSums(k, 0.0);
@@ -191,9 +191,9 @@ MatrixXd computeResponsibilities(const std::vector<VectorXd> &data, const std::v
         MPI_Bcast(covariances[j].data(), numFeatures * numFeatures, MPI_DOUBLE, 0, MPI_COMM_WORLD);
     }
 
-} */
+}
 
-void updateParameters(const std::vector<VectorXd> &localData, int globalDataSize, 
+/* void updateParameters(const std::vector<VectorXd> &localData, int globalDataSize, 
                       const MatrixXd &responsibilities, std::vector<VectorXd> &means, 
                       std::vector<MatrixXd> &covariances, std::vector<double> &weights, 
                       int k, int rank, int size, int numFeatures) {
@@ -264,7 +264,7 @@ void updateParameters(const std::vector<VectorXd> &localData, int globalDataSize
     for (int j = 0; j < k; ++j) {
         MPI_Bcast(covariances[j].data(), numFeatures * numFeatures, MPI_DOUBLE, 0, MPI_COMM_WORLD);
     }
-}
+} */
 
 
 
@@ -276,9 +276,9 @@ int main(int argc, char **argv) {
     MPI_Comm_size(MPI_COMM_WORLD, &size);
     start_time = MPI_Wtime();
 
-    const std::string filename = "../data/s3.csv";
-    const int k = 15;        // Numero di cluster
-    const int maxIter = 20; // Numero massimo di iterazioni
+    const std::string filename = "../data/1M.csv";
+    const int k = 5;        // Numero di cluster
+    const int maxIter = 5; // Numero massimo di iterazioni
     int numFeatures = 0;    // Numero di caratteristiche dei dati
     std::vector<VectorXd> fullData;
     std::vector<VectorXd> localData;
@@ -394,9 +394,9 @@ int main(int argc, char **argv) {
 
         totaleStep += eStepEnd - eStepStart;
 
-        if (rank == 0) {
+      /*   if (rank == 0) {
             std::cout << "Tempo E-step (Iterazione " << iter + 1 << "): " << eStepEnd - eStepStart << " secondi." << std::endl;
-        }
+        } */
 
         
         double mStepStart = MPI_Wtime();  
@@ -408,16 +408,16 @@ int main(int argc, char **argv) {
 
         totalmstep += mStepEnd - mStepStart;
 
-        if (rank == 0) {
+        /* if (rank == 0) {
             std::cout << "Tempo M-step (Iterazione " << iter + 1 << "): " << mStepEnd- mStepStart << " secondi." << std::endl;
-            /* for (int j = 0; j < k; ++j) {
+            for (int j = 0; j < k; ++j) {
                 std::cout << "Cluster " << j + 1 << ":\n";
                 std::cout << "Mean:\n" << means[j] << "\n";
                 std::cout << "Covariance:\n" << covariances[j] << "\n";
                 std::cout << "Weight: " << weights[j] << "\n\n";
-            } */
+            } 
             std::cout << "Tempo Iterazione " << iter + 1 << ": " << mStepEnd - eStepStart << " secondi." << std::endl;
-        }
+        } */
     }
 
     end_time = MPI_Wtime();

@@ -43,7 +43,7 @@ def load_dataset(filename):
     print(f"Dimensioni: {X.shape}")
     return X
 
-def fit_gmm(X, n_components=4, random_state=42):
+def fit_gmm(X, n_components=5, random_state=42):
     """
     Addestra un modello GMM sui dati
     """
@@ -123,29 +123,36 @@ def plot_gmm_clusters(X, gmm, title="GMM Clustering Results"):
     plt.grid(True, alpha=0.3)
     plt.show()
 
+def generate_iter_dataset(n_samples_min=72000, n_samples_max=864000, step=72000):
+    for i in range(n_samples_min, n_samples_max+1, step):
+        print(f"Generazione dataset con {i} campioni")
+        X = create_sample_data(n_samples=i)
+        data_filename = save_dataset(X, f"../data/{i}.csv")
+
 def main():
     # Genera dati di esempio
-    X = create_sample_data(n_samples=20000000)
+    # X = create_sample_data(n_samples=20000000)
     
     # Salva il dataset
-    data_filename = save_dataset(X, "../data/20M.csv")
+    # data_filename = save_dataset(X, "../data/100k.csv")
+    # generate_iter_dataset()
 
-    
     # Puoi anche ricaricare i dati così:
-    # X = load_dataset(data_filename)
+    X = load_dataset("../data/1M.csv")
 
     # take time
-    # start = datetime.datetime.now()
+    start = datetime.datetime.now()
     # Addestra il modello GMM
-    # gmm = fit_gmm(X)
-    # end = datetime.datetime.now()
-    # print(f"Tempo di addestramento: {end-start}")
+    gmm = fit_gmm(X)
+    end = datetime.datetime.now()
+    print(f"Tempo di addestramento: {end-start}")
     # print in second
     # Stampa i parametri
-    #à print_gmm_parameters(gmm)
+    print_gmm_parameters(gmm)
 
-    # print(gmm.n_iter_)
+    print(gmm.n_iter_)
 
+    print("iteration time:", (end-start) / gmm.n_iter_)
     
     # Salva i parametri del modello
     # params_filename = save_gmm_parameters(gmm, "esempio_parametri_gmm")

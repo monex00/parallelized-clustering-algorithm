@@ -93,7 +93,7 @@ MatrixXd computeResponsibilities(const std::vector<VectorXd>& data, const std::v
 }
 
 // M-step
-/* void updateParameters(const std::vector<VectorXd>& data, const MatrixXd& responsibilities, std::vector<VectorXd>& means,
+void updateParameters(const std::vector<VectorXd>& data, const MatrixXd& responsibilities, std::vector<VectorXd>& means,
                       std::vector<MatrixXd>& covariances, std::vector<double>& weights, int k) {
     size_t n = data.size();
     int numFeatures = data[0].size();
@@ -121,9 +121,9 @@ MatrixXd computeResponsibilities(const std::vector<VectorXd>& data, const std::v
         newCovariance /= responsibilitySum;
         covariances[j] = newCovariance;
     }
-} */
+}
 
-void updateParameters(const std::vector<VectorXd>& data, const MatrixXd& responsibilities, 
+/* void updateParameters(const std::vector<VectorXd>& data, const MatrixXd& responsibilities, 
                       std::vector<VectorXd>& means, std::vector<MatrixXd>& covariances, 
                       std::vector<double>& weights, int k) {
     size_t n = data.size();
@@ -152,12 +152,12 @@ void updateParameters(const std::vector<VectorXd>& data, const MatrixXd& respons
         MatrixXd newCovariance = (weightedCentered.transpose() * centered) / responsibilitySum;
         covariances[j] = newCovariance;
     }
-}
+} */
 
 int main() {
-    const std::string filename = "../data/s3.csv";
-    const int k = 15; // Numero di cluster
-    const int maxIter = 10; // Numero massimo di iterazioni
+    const std::string filename = "../data/1M.csv";
+    const int k = 5; // Numero di cluster
+    const int maxIter = 5; // Numero massimo di iterazioni
     int numFeatures = 0;
 
     try {
@@ -197,12 +197,12 @@ int main() {
             std::chrono::duration<double> iterTime = endIter - startIter;
 
             std::cout << "Tempo iterazione " << iter + 1 << ": " << iterTime.count() << " secondi\n";
-            for (int j = 0; j < k; ++j) {
+           /*  for (int j = 0; j < k; ++j) {
                 std::cout << "Cluster " << j + 1 << ":\n";
                 std::cout << "Mean:\n" << means[j] << "\n";
                 std::cout << "Covariance:\n" << covariances[j] << "\n";
                 std::cout << "Weight: " << weights[j] << "\n\n";
-            }
+            } */
         }
 
         auto endTotal = std::chrono::high_resolution_clock::now();
@@ -211,12 +211,12 @@ int main() {
         std::cout << "\nTempo totale: " << totalTime.count() << " secondi\n";
 
         // Stampa dei risultati
-        /*  for (int j = 0; j < k; ++j) {
+         for (int j = 0; j < k; ++j) {
             std::cout << "Cluster " << j + 1 << ":\n";
             std::cout << "Mean:\n" << means[j] << "\n";
             std::cout << "Covariance:\n" << covariances[j] << "\n";
             std::cout << "Weight: " << weights[j] << "\n\n";
-        } */
+        }
 
     } catch (const std::exception& e) {
         std::cerr << "Errore: " << e.what() << std::endl;

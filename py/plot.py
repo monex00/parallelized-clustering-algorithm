@@ -11,7 +11,7 @@ clusters = params['Cluster'].unique()
 features = params['Feature'].unique()
 
 # Legge i dati originali
-data = pd.read_csv("../data/s3.csv", header=None)
+data = pd.read_csv("../data/1M.csv", header=None)
 
 # Calcola il cluster dominante per ogni dato
 dominant_responsibilities = responsibilities.loc[responsibilities.groupby('DataPoint')['Responsibility'].idxmax()]

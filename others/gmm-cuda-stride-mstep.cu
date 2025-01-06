@@ -318,13 +318,86 @@ void checkCudaError(const char* message) {
     }
 }
 
+double squaredEuclideanDistance(const double *point1, const double *point2, int d)
+{
+    double distance = 0.0;
+    for (int i = 0; i < d; ++i)
+    {
+        double diff = point1[i] - point2[i];
+        distance += diff * diff;
+    }
+    return distance;
+}
+
+// Funzione per inizializzare le medie con k-means++
+void initializeMeans(double *h_data, double *h_means, int N, int d, int k)
+{
+    int *chosenIndices = (int *)malloc(k * sizeof(int));
+    double *distances = (double *)malloc(N * sizeof(double));
+
+    // Scegli il primo centro casualmente
+    chosenIndices[0] = rand() % N;
+    for (int i = 0; i < d; ++i)
+    {
+        h_means[i] = h_data[chosenIndices[0] * d + i];
+    }
+
+    // Inizializza le distanze
+    for (int i = 0; i < N; ++i)
+    {
+        distances[i] = squaredEuclideanDistance(h_data + i * d, h_means, d);
+    }
+
+    // Scegli gli altri centri
+    for (int cluster = 1; cluster < k; ++cluster)
+    {
+        double totalDistance = 0.0;
+        for (int i = 0; i < N; ++i)
+        {
+            totalDistance += distances[i];
+        }
+
+        // Seleziona il prossimo centro basato sulla probabilità
+        double r = ((double)rand() / RAND_MAX) * totalDistance;
+        double cumulativeDistance = 0.0;
+        int chosenIndex = -1;
+        for (int i = 0; i < N; ++i)
+        {
+            cumulativeDistance += distances[i];
+            if (cumulativeDistance >= r)
+            {
+                chosenIndex = i;
+                break;
+            }
+        }
+        chosenIndices[cluster] = chosenIndex;
+        for (int i = 0; i < d; ++i)
+        {
+            h_means[cluster * d + i] = h_data[chosenIndices[cluster] * d + i];
+        }
+
+        // Aggiorna le distanze
+        for (int i = 0; i < N; ++i)
+        {
+            double distance = squaredEuclideanDistance(h_data + i * d, h_means + cluster * d, d);
+            if (distance < distances[i])
+            {
+                distances[i] = distance;
+            }
+        }
+    }
+
+    free(chosenIndices);
+    free(distances);
+}
+
 int main() {
     const int d = 10;    // Numero di features
     const int k = 5;    // Numero di cluster
-    const int maxIter = 9;
-    const char* fileName = "./results/esempio_dataset_20241201_180953.csv"; // Nome del file CSV
+    const int maxIter = 5;
+    const char* fileName = "../data/1M.csv"; // Nome del file CSV
     int threadsPerBlock = 256;
-    int dataPerThread = 128;
+    int dataPerThread = 100;
     const double epsilon = 1e-9;
     double maxChange = 0.0;
 
@@ -380,7 +453,7 @@ int main() {
     // double* h_local_weights = (double*)malloc(threadsPerBlock * numBlocks * k * sizeof(double));
     // double* h_local_cov_matrixes = (double*)malloc(threadsPrBlock * numBlocks * k * d * d * sizeof(double));
 
-    double feature_means[d];
+  /*   double feature_means[d];
     for (int j = 0; j < d; ++j) {
         feature_means[j] = 0.0;
     }
@@ -399,8 +472,8 @@ int main() {
         for (int j = 0; j < d; ++j) {
             h_means[i * d + j] = feature_means[j] + (double)(rand() % 100) / 100.0; // 5 + (0, 1)
         }
-    }
-
+    } */
+ initializeMeans(h_data, h_means, N, d, k);
 
     for (int i = 0; i < k; ++i) {
         h_weights[i] = 1.0 / k;
