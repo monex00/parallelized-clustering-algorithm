@@ -3,9 +3,9 @@
 #SBATCH --output=results/gmm_mpi_omp.out  # File di output
 #SBATCH --error=results/gmm_mpi_omp.err   # File di errori
 #SBATCH --partition=broadwell             # Partizione (verifica il nome corretto)
-#SBATCH --nodes=3                         # Numero di nodi better 3
+#SBATCH --nodes=2                         # Numero di nodi better 3
 #SBATCH --ntasks=6                      # Numero totale di task MPI better 6 , 9 , 12 ,15
-#SBATCH --cpus-per-task=18            # Numero di CPU per task MPI better 18 = ~25 con 12 = 24.2518 con 9 = 23.2676 con 7 = 23.3591
+#SBATCH --cpus-per-task=9            # Numero di CPU per task MPI better 18 = ~25 con 12 = 24.2518 con 9 = 23.2676 con 7 = 23.3591
 #SBATCH --time=02:00:00                   # Tempo massimo (aggiunto per evitare timeout)
 
 #4          4 
@@ -35,7 +35,7 @@ fi
 # Compila il programma
 mpic++ -fopenmp \
     -I$(spack location -i eigen)/include \
-    gmm_mpi_omp.cpp -o ./build/gmm_mpi_omp
+    gmm_mpi_omp_old.cpp -o ./build/gmm_mpi_omp
 
 # Verifica se la compilazione è riuscita
 if [ $? -ne 0 ]; then

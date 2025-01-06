@@ -1,0 +1,489 @@
+Compilazione del programma MPI...
+Esecuzione configurazione: 1 nodi, 1 processi, 1 thread
+Esecuzione 1 Output: 169.301
+Esecuzione 2 Output: 167.962
+Esecuzione 3 Output: 168.867
+Configurazione: 1 nodi, 1 processi, 1 thread
+Risultati totali: 506.130000
+Numero di esecuzioni: 3
+Media: 168.710000
+Esecuzione configurazione: 1 nodi, 2 processi, 18 thread
+Esecuzione 1 Output: 18.3862
+Esecuzione 2 Output: 18.1322
+Esecuzione 3 Output: 17.9512
+Configurazione: 1 nodi, 2 processi, 18 thread
+Risultati totali: 54.469600
+Numero di esecuzioni: 3
+Media: 18.156533
+Esecuzione configurazione: 1 nodi, 4 processi, 9 thread
+Esecuzione 1 Output: 13.9975
+Esecuzione 2 Output: 14.0457
+Esecuzione 3 Output: 14.0615
+Configurazione: 1 nodi, 4 processi, 9 thread
+Risultati totali: 42.104700
+Numero di esecuzioni: 3
+Media: 14.034900
+Esecuzione configurazione: 1 nodi, 8 processi, 4 thread
+Esecuzione 1 Output: 13.9582
+Esecuzione 2 Output: 13.939
+Esecuzione 3 Output: 14.1488
+Configurazione: 1 nodi, 8 processi, 4 thread
+Risultati totali: 42.046000
+Numero di esecuzioni: 3
+Media: 14.015333
+Esecuzione configurazione: 1 nodi, 12 processi, 3 thread
+Esecuzione 1 Output: 12.5823
+Esecuzione 2 Output: 12.5676
+Esecuzione 3 Output: 12.6354
+Configurazione: 1 nodi, 12 processi, 3 thread
+Risultati totali: 37.785300
+Numero di esecuzioni: 3
+Media: 12.595100
+Esecuzione configurazione: 1 nodi, 36 processi, 1 thread
+Esecuzione 1 Output: 12.5587
+Esecuzione 2 Output: 12.3316
+Esecuzione 3 Output: 12.4818
+Configurazione: 1 nodi, 36 processi, 1 thread
+Risultati totali: 37.372100
+Numero di esecuzioni: 3
+Media: 12.457367
+Esecuzione configurazione: 2 nodi, 4 processi, 18 thread
+Esecuzione 1 Output: 11.7686
+Esecuzione 2 Output: 11.6046
+Esecuzione 3 Output: 11.575
+Configurazione: 2 nodi, 4 processi, 18 thread
+Risultati totali: 34.948200
+Numero di esecuzioni: 3
+Media: 11.649400
+Esecuzione configurazione: 2 nodi, 8 processi, 9 thread
+Esecuzione 1 Output: 9.75209
+Esecuzione 2 Output: 9.7226
+Esecuzione 3 Output: 10.7756
+Configurazione: 2 nodi, 8 processi, 9 thread
+Risultati totali: 30.250290
+Numero di esecuzioni: 3
+Media: 10.083430
+Esecuzione configurazione: 2 nodi, 16 processi, 4 thread
+Esecuzione 1 Output: 9.84886
+Esecuzione 2 Output: 9.92142
+Esecuzione 3 Output: 9.89246
+Configurazione: 2 nodi, 16 processi, 4 thread
+Risultati totali: 29.662740
+Numero di esecuzioni: 3
+Media: 9.887580
+Esecuzione configurazione: 2 nodi, 24 processi, 3 thread
+Esecuzione 1 Output: 9.27429
+Esecuzione 2 Output: 9.28308
+Esecuzione 3 Output: 9.37443
+Configurazione: 2 nodi, 24 processi, 3 thread
+Risultati totali: 27.931800
+Numero di esecuzioni: 3
+Media: 9.310600
+Esecuzione configurazione: 2 nodi, 72 processi, 1 thread
+Esecuzione 1 Output: 9.54064
+Esecuzione 2 Output: 9.42023
+Esecuzione 3 Output: 9.41265
+Configurazione: 2 nodi, 72 processi, 1 thread
+Risultati totali: 28.373520
+Numero di esecuzioni: 3
+Media: 9.457840
+Esecuzione configurazione: 3 nodi, 6 processi, 18 thread
+Esecuzione 1 Output: 9.44728
+Esecuzione 2 Output: 9.40613
+Esecuzione 3 Output: 9.53762
+Configurazione: 3 nodi, 6 processi, 18 thread
+Risultati totali: 28.391030
+Numero di esecuzioni: 3
+Media: 9.463677
+Esecuzione configurazione: 3 nodi, 12 processi, 9 thread
+Esecuzione 1 Output: 8.26406
+Esecuzione 2 Output: 8.27632
+Esecuzione 3 Output: 8.2541
+Configurazione: 3 nodi, 12 processi, 9 thread
+Risultati totali: 24.794480
+Numero di esecuzioni: 3
+Media: 8.264827
+Esecuzione configurazione: 3 nodi, 24 processi, 4 thread
+Esecuzione 1 Output: 8.48735
+Esecuzione 2 Output: 8.54655
+Esecuzione 3 Output: 8.56963
+Configurazione: 3 nodi, 24 processi, 4 thread
+Risultati totali: 25.603530
+Numero di esecuzioni: 3
+Media: 8.534510
+Esecuzione configurazione: 3 nodi, 36 processi, 3 thread
+Esecuzione 1 Output: 8.22329
+Esecuzione 2 Output: 8.22999
+Esecuzione 3 Output: 8.25386
+Configurazione: 3 nodi, 36 processi, 3 thread
+Risultati totali: 24.707140
+Numero di esecuzioni: 3
+Media: 8.235713
+Esecuzione configurazione: 3 nodi, 108 processi, 1 thread
+Esecuzione 1 Output: 8.4654
+Esecuzione 2 Output: 8.63896
+Esecuzione 3 Output: 8.40597
+Configurazione: 3 nodi, 108 processi, 1 thread
+Risultati totali: 25.510330
+Numero di esecuzioni: 3
+Media: 8.503443
+Esecuzione configurazione: 4 nodi, 8 processi, 18 thread
+Esecuzione 1 Output: 8.41784
+Esecuzione 2 Output: 8.4097
+Esecuzione 3 Output: 8.38222
+Configurazione: 4 nodi, 8 processi, 18 thread
+Risultati totali: 25.209760
+Numero di esecuzioni: 3
+Media: 8.403253
+Esecuzione configurazione: 4 nodi, 16 processi, 9 thread
+Esecuzione 1 Output: 7.52702
+Esecuzione 2 Output: 7.65059
+Esecuzione 3 Output: 7.62873
+Configurazione: 4 nodi, 16 processi, 9 thread
+Risultati totali: 22.806340
+Numero di esecuzioni: 3
+Media: 7.602113
+Esecuzione configurazione: 4 nodi, 32 processi, 4 thread
+Esecuzione 1 Output: 7.6863
+Esecuzione 2 Output: 7.9051
+Esecuzione 3 Output: 7.80255
+Configurazione: 4 nodi, 32 processi, 4 thread
+Risultati totali: 23.393950
+Numero di esecuzioni: 3
+Media: 7.797983
+Esecuzione configurazione: 4 nodi, 48 processi, 3 thread
+Esecuzione 1 Output: 7.65874
+Esecuzione 2 Output: 7.74333
+Esecuzione 3 Output: 7.65462
+Configurazione: 4 nodi, 48 processi, 3 thread
+Risultati totali: 23.056690
+Numero di esecuzioni: 3
+Media: 7.685563
+Esecuzione configurazione: 4 nodi, 144 processi, 1 thread
+Esecuzione 1 Output: 7.99796
+Esecuzione 2 Output: 7.92761
+Esecuzione 3 Output: 7.89246
+Configurazione: 4 nodi, 144 processi, 1 thread
+Risultati totali: 23.818030
+Numero di esecuzioni: 3
+Media: 7.939343
+Esecuzione configurazione: 5 nodi, 10 processi, 18 thread
+Esecuzione 1 Output: 7.77538
+Esecuzione 2 Output: 7.80326
+Esecuzione 3 Output: 7.75079
+Configurazione: 5 nodi, 10 processi, 18 thread
+Risultati totali: 23.329430
+Numero di esecuzioni: 3
+Media: 7.776477
+Esecuzione configurazione: 5 nodi, 20 processi, 9 thread
+Esecuzione 1 Output: 7.08168
+Esecuzione 2 Output: 7.08082
+Esecuzione 3 Output: 7.12899
+Configurazione: 5 nodi, 20 processi, 9 thread
+Risultati totali: 21.291490
+Numero di esecuzioni: 3
+Media: 7.097163
+Esecuzione configurazione: 5 nodi, 40 processi, 4 thread
+Esecuzione 1 Output: 7.30694
+Esecuzione 2 Output: 7.3704
+Esecuzione 3 Output: 7.37793
+Configurazione: 5 nodi, 40 processi, 4 thread
+Risultati totali: 22.055270
+Numero di esecuzioni: 3
+Media: 7.351757
+Esecuzione configurazione: 5 nodi, 60 processi, 3 thread
+Esecuzione 1 Output: 7.36583
+Esecuzione 2 Output: 7.36532
+Esecuzione 3 Output: 7.36104
+Configurazione: 5 nodi, 60 processi, 3 thread
+Risultati totali: 22.092190
+Numero di esecuzioni: 3
+Media: 7.364063
+Esecuzione configurazione: 5 nodi, 180 processi, 1 thread
+Esecuzione 1 Output: 7.65812
+Esecuzione 2 Output: 7.57421
+Esecuzione 3 Output: 7.68601
+Configurazione: 5 nodi, 180 processi, 1 thread
+Risultati totali: 22.918340
+Numero di esecuzioni: 3
+Media: 7.639447
+Esecuzione configurazione: 6 nodi, 12 processi, 18 thread
+Esecuzione 1 Output: 7.38068
+Esecuzione 2 Output: 7.32005
+Esecuzione 3 Output: 7.5442
+Configurazione: 6 nodi, 12 processi, 18 thread
+Risultati totali: 22.244930
+Numero di esecuzioni: 3
+Media: 7.414977
+Esecuzione configurazione: 6 nodi, 24 processi, 9 thread
+Esecuzione 1 Output: 6.87593
+Esecuzione 2 Output: 6.83493
+Esecuzione 3 Output: 6.84704
+Configurazione: 6 nodi, 24 processi, 9 thread
+Risultati totali: 20.557900
+Numero di esecuzioni: 3
+Media: 6.852633
+Esecuzione configurazione: 6 nodi, 48 processi, 4 thread
+Esecuzione 1 Output: 7.13567
+Esecuzione 2 Output: 7.12981
+Esecuzione 3 Output: 7.08665
+Configurazione: 6 nodi, 48 processi, 4 thread
+Risultati totali: 21.352130
+Numero di esecuzioni: 3
+Media: 7.117377
+Esecuzione configurazione: 6 nodi, 72 processi, 3 thread
+Esecuzione 1 Output: 7.08486
+Esecuzione 2 Output: 7.14234
+Esecuzione 3 Output: 7.0709
+Configurazione: 6 nodi, 72 processi, 3 thread
+Risultati totali: 21.298100
+Numero di esecuzioni: 3
+Media: 7.099367
+Esecuzione configurazione: 6 nodi, 216 processi, 1 thread
+Esecuzione 1 Output: 7.79786
+Esecuzione 2 Output: 7.40334
+Esecuzione 3 Output: 7.44337
+Configurazione: 6 nodi, 216 processi, 1 thread
+Risultati totali: 22.644570
+Numero di esecuzioni: 3
+Media: 7.548190
+Esecuzione configurazione: 7 nodi, 14 processi, 18 thread
+Esecuzione 1 Output: 7.36806
+Esecuzione 2 Output: 7.23598
+Esecuzione 3 Output: 7.29636
+Configurazione: 7 nodi, 14 processi, 18 thread
+Risultati totali: 21.900400
+Numero di esecuzioni: 3
+Media: 7.300133
+Esecuzione configurazione: 7 nodi, 28 processi, 9 thread
+Esecuzione 1 Output: 6.86749
+Esecuzione 2 Output: 7.02956
+Esecuzione 3 Output: 6.88616
+Configurazione: 7 nodi, 28 processi, 9 thread
+Risultati totali: 20.783210
+Numero di esecuzioni: 3
+Media: 6.927737
+Esecuzione configurazione: 7 nodi, 56 processi, 4 thread
+Esecuzione 1 Output: 7.14691
+Esecuzione 2 Output: 7.23275
+Esecuzione 3 Output: 7.49356
+Configurazione: 7 nodi, 56 processi, 4 thread
+Risultati totali: 21.873220
+Numero di esecuzioni: 3
+Media: 7.291073
+Esecuzione configurazione: 7 nodi, 84 processi, 3 thread
+Esecuzione 1 Output: 7.42745
+Esecuzione 2 Output: 7.31707
+Esecuzione 3 Output: 7.42073
+Configurazione: 7 nodi, 84 processi, 3 thread
+Risultati totali: 22.165250
+Numero di esecuzioni: 3
+Media: 7.388417
+Esecuzione configurazione: 7 nodi, 252 processi, 1 thread
+Esecuzione 1 Output: 12.7032
+Esecuzione 2 Output: 13.7654
+Esecuzione 3 Output: 13.6999
+Configurazione: 7 nodi, 252 processi, 1 thread
+Risultati totali: 40.168500
+Numero di esecuzioni: 3
+Media: 13.389500
+Esecuzione configurazione: 8 nodi, 16 processi, 18 thread
+Esecuzione 1 Output: 7.02016
+Esecuzione 2 Output: 7.06918
+Esecuzione 3 Output: 7.00333
+Configurazione: 8 nodi, 16 processi, 18 thread
+Risultati totali: 21.092670
+Numero di esecuzioni: 3
+Media: 7.030890
+Esecuzione configurazione: 8 nodi, 32 processi, 9 thread
+Esecuzione 1 Output: 6.72026
+Esecuzione 2 Output: 6.69674
+Esecuzione 3 Output: 6.74138
+Configurazione: 8 nodi, 32 processi, 9 thread
+Risultati totali: 20.158380
+Numero di esecuzioni: 3
+Media: 6.719460
+Esecuzione configurazione: 8 nodi, 64 processi, 4 thread
+Esecuzione 1 Output: 7.01726
+Esecuzione 2 Output: 7.00099
+Esecuzione 3 Output: 7.0322
+Configurazione: 8 nodi, 64 processi, 4 thread
+Risultati totali: 21.050450
+Numero di esecuzioni: 3
+Media: 7.016817
+Esecuzione configurazione: 8 nodi, 96 processi, 3 thread
+Esecuzione 1 Output: 7.21656
+Esecuzione 2 Output: 7.23195
+Esecuzione 3 Output: 7.31889
+Configurazione: 8 nodi, 96 processi, 3 thread
+Risultati totali: 21.767400
+Numero di esecuzioni: 3
+Media: 7.255800
+Esecuzione configurazione: 8 nodi, 288 processi, 1 thread
+Esecuzione 1 Output: 13.7562
+Esecuzione 2 Output: 12.2664
+Esecuzione 3 Output: 12.4258
+Configurazione: 8 nodi, 288 processi, 1 thread
+Risultati totali: 38.448400
+Numero di esecuzioni: 3
+Media: 12.816133
+Esecuzione configurazione: 9 nodi, 18 processi, 18 thread
+Esecuzione 1 Output: 6.83306
+Esecuzione 2 Output: 7.0058
+Esecuzione 3 Output: 6.90788
+Configurazione: 9 nodi, 18 processi, 18 thread
+Risultati totali: 20.746740
+Numero di esecuzioni: 3
+Media: 6.915580
+Esecuzione configurazione: 9 nodi, 36 processi, 9 thread
+Esecuzione 1 Output: 6.61312
+Esecuzione 2 Output: 6.57318
+Esecuzione 3 Output: 6.51474
+Configurazione: 9 nodi, 36 processi, 9 thread
+Risultati totali: 19.701040
+Numero di esecuzioni: 3
+Media: 6.567013
+Esecuzione configurazione: 9 nodi, 72 processi, 4 thread
+Esecuzione 1 Output: 6.82522
+Esecuzione 2 Output: 6.86666
+Esecuzione 3 Output: 6.81652
+Configurazione: 9 nodi, 72 processi, 4 thread
+Risultati totali: 20.508400
+Numero di esecuzioni: 3
+Media: 6.836133
+Esecuzione configurazione: 9 nodi, 108 processi, 3 thread
+Esecuzione 1 Output: 7.00074
+Esecuzione 2 Output: 7.1901
+Esecuzione 3 Output: 7.20099
+Configurazione: 9 nodi, 108 processi, 3 thread
+Risultati totali: 21.391830
+Numero di esecuzioni: 3
+Media: 7.130610
+Esecuzione configurazione: 9 nodi, 324 processi, 1 thread
+Esecuzione 1 Output: 15.5792
+Esecuzione 2 Output: 17.0236
+Esecuzione 3 Output: 15.8167
+Configurazione: 9 nodi, 324 processi, 1 thread
+Risultati totali: 48.419500
+Numero di esecuzioni: 3
+Media: 16.139833
+Esecuzione configurazione: 10 nodi, 20 processi, 18 thread
+Esecuzione 1 Output: 6.742
+Esecuzione 2 Output: 6.68962
+Esecuzione 3 Output: 6.82287
+Configurazione: 10 nodi, 20 processi, 18 thread
+Risultati totali: 20.254490
+Numero di esecuzioni: 3
+Media: 6.751497
+Esecuzione configurazione: 10 nodi, 40 processi, 9 thread
+Esecuzione 1 Output: 6.48727
+Esecuzione 2 Output: 6.42845
+Esecuzione 3 Output: 6.40962
+Configurazione: 10 nodi, 40 processi, 9 thread
+Risultati totali: 19.325340
+Numero di esecuzioni: 3
+Media: 6.441780
+Esecuzione configurazione: 10 nodi, 80 processi, 4 thread
+Esecuzione 1 Output: 6.83741
+Esecuzione 2 Output: 6.79906
+Esecuzione 3 Output: 6.7265
+Configurazione: 10 nodi, 80 processi, 4 thread
+Risultati totali: 20.362970
+Numero di esecuzioni: 3
+Media: 6.787657
+Esecuzione configurazione: 10 nodi, 120 processi, 3 thread
+Esecuzione 1 Output: 7.0558
+Esecuzione 2 Output: 6.95764
+Esecuzione 3 Output: 6.98228
+Configurazione: 10 nodi, 120 processi, 3 thread
+Risultati totali: 20.995720
+Numero di esecuzioni: 3
+Media: 6.998573
+Esecuzione configurazione: 10 nodi, 360 processi, 1 thread
+Esecuzione 1 Output: 17.3034
+Esecuzione 2 Output: 18.3478
+Esecuzione 3 Output: 14.7698
+Configurazione: 10 nodi, 360 processi, 1 thread
+Risultati totali: 50.421000
+Numero di esecuzioni: 3
+Media: 16.807000
+Esecuzione configurazione: 11 nodi, 22 processi, 18 thread
+Esecuzione 1 Output: 6.56827
+Esecuzione 2 Output: 6.58673
+Esecuzione 3 Output: 6.61625
+Configurazione: 11 nodi, 22 processi, 18 thread
+Risultati totali: 19.771250
+Numero di esecuzioni: 3
+Media: 6.590417
+Esecuzione configurazione: 11 nodi, 44 processi, 9 thread
+Esecuzione 1 Output: 6.25579
+Esecuzione 2 Output: 6.37342
+Esecuzione 3 Output: 6.68962
+Configurazione: 11 nodi, 44 processi, 9 thread
+Risultati totali: 19.318830
+Numero di esecuzioni: 3
+Media: 6.439610
+Esecuzione configurazione: 11 nodi, 88 processi, 4 thread
+Esecuzione 1 Output: 6.74171
+Esecuzione 2 Output: 6.68862
+Esecuzione 3 Output: 6.72048
+Configurazione: 11 nodi, 88 processi, 4 thread
+Risultati totali: 20.150810
+Numero di esecuzioni: 3
+Media: 6.716937
+Esecuzione configurazione: 11 nodi, 132 processi, 3 thread
+Esecuzione 1 Output: 6.87613
+Esecuzione 2 Output: 7.01537
+Esecuzione 3 Output: 7.01105
+Configurazione: 11 nodi, 132 processi, 3 thread
+Risultati totali: 20.902550
+Numero di esecuzioni: 3
+Media: 6.967517
+Esecuzione configurazione: 11 nodi, 396 processi, 1 thread
+Esecuzione 1 Output: 20.3252
+Esecuzione 2 Output: 18.2066
+Esecuzione 3 Output: 20.8959
+Configurazione: 11 nodi, 396 processi, 1 thread
+Risultati totali: 59.427700
+Numero di esecuzioni: 3
+Media: 19.809233
+Esecuzione configurazione: 12 nodi, 24 processi, 18 thread
+Esecuzione 1 Output: 6.55216
+Esecuzione 2 Output: 6.47698
+Esecuzione 3 Output: 6.5173
+Configurazione: 12 nodi, 24 processi, 18 thread
+Risultati totali: 19.546440
+Numero di esecuzioni: 3
+Media: 6.515480
+Esecuzione configurazione: 12 nodi, 48 processi, 9 thread
+Esecuzione 1 Output: 6.33866
+Esecuzione 2 Output: 7.1185
+Esecuzione 3 Output: 6.33125
+Configurazione: 12 nodi, 48 processi, 9 thread
+Risultati totali: 19.788410
+Numero di esecuzioni: 3
+Media: 6.596137
+Esecuzione configurazione: 12 nodi, 96 processi, 4 thread
+Esecuzione 1 Output: 6.80545
+Esecuzione 2 Output: 6.57238
+Esecuzione 3 Output: 6.61596
+Configurazione: 12 nodi, 96 processi, 4 thread
+Risultati totali: 19.993790
+Numero di esecuzioni: 3
+Media: 6.664597
+Esecuzione configurazione: 12 nodi, 144 processi, 3 thread
+Esecuzione 1 Output: 7.05169
+Esecuzione 2 Output: 6.83812
+Esecuzione 3 Output: 6.78974
+Configurazione: 12 nodi, 144 processi, 3 thread
+Risultati totali: 20.679550
+Numero di esecuzioni: 3
+Media: 6.893183
+Esecuzione configurazione: 12 nodi, 432 processi, 1 thread
+Esecuzione 1 Output: 17.9162
+Esecuzione 2 Output: 17.6341
+Esecuzione 3 Output: 18.1844
+Configurazione: 12 nodi, 432 processi, 1 thread
+Risultati totali: 53.734700
+Numero di esecuzioni: 3
+Media: 17.911567

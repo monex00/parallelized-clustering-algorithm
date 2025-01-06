@@ -12,7 +12,7 @@ fi
 # spack load cuda
 
 # Compilazione
-srun nvcc gmm-cuda-stride-reduction.cu -o ./build/gmm-cuda-stride-reduction -lcudart -lcublas -lm
+srun nvcc gmm-cuda-old.cu -o ./build/gmm-cuda-stride-reduction -lcudart -lcublas -lm
 if [ $? -ne 0 ]; then
     echo "Compilazione fallita"
     exit 1

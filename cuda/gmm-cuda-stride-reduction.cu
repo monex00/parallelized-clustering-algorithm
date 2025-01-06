@@ -114,13 +114,16 @@ __global__ void reduceWeightMean(
     double sumMeans[32] = {0.0};
     // stampare grandezza local_means per verificare un illegal memory access
 
+    // printf("num: %d\n", Num); // 1000
+    // printf("elemesPerThread: %d\n", elemsPerThread); // 4
+    //printf("startIdx: %d\n", startIdx); // [0, 1, 2, 3]
+ 
     // [1 , 2, 3, 4]
     for (unsigned int offset = 0; offset < elemsPerThread; ++offset)
     {
         int idx = startIdx + offset;
         // stampare idx e N per verificare un illegal memory access
-        if ((idx * (cluster + 1)) < Num)
-        {
+        if ((idx * k + cluster) < Num){
             sumWeights += local_weights[idx * k + cluster]; // [idx][cluster]
             for (int i = 0; i < d; ++i)
             {
@@ -179,8 +182,8 @@ __global__ void reduceCovMatrices(
     for (unsigned int offset = 0; offset < elemsPerThread; ++offset)
     {
         int idx = startIdx + offset;
-        if ((idx * (cluster + 1)) < num)
-        {
+/*         if (idx * (cluster + 1) < num)
+        {  */
 
             for (int j = 0; j < d; ++j)
             {
@@ -189,7 +192,7 @@ __global__ void reduceCovMatrices(
                     sumCovMatrices[j * d + l] += local_cov_matrices[idx * k * d * d + cluster * d * d + j * d + l];
                 }
             }
-        }
+       /* } */
     }
 
     for (int j = 0; j < d; ++j)
@@ -497,11 +500,11 @@ void initializeMeans(double *h_data, double *h_means, int N, int d, int k)
 int main(int argc, char *argv[])
 {
 
-    const int d = 2; // Numero di features
-    const int k = 10;  // Numero di cluster
-    const int maxIter = 20;
+    const int d = 10; // Numero di features
+    const int k = 5;  // Numero di cluster
+    const int maxIter = 5;
     // const char *fileName = "./results/esempio_dataset_20241201_180953.csv"; // Nome del file CSV
-    const char *fileName = "../data/s3.csv";
+    const char *fileName = "../data/1M.csv";
     int threadsPerBlock = 256;
     // take dataPerThread as parameter
     // int dataPerThread = atoi(argv[1]);
@@ -680,7 +683,7 @@ int main(int argc, char *argv[])
         }
         // printf("Numero di thread per blocco reduce 1: %d\n", reduNumThreads);
 
-        reduceWeightMean<<<k, threadsPerBlock>>>(d_local_means, d_local_weights, d_means, d_weights, d, k, totalThreads * k, (totalThreads + reduNumThreads - 1) / reduNumThreads);
+        reduceWeightMean<<<k, threadsPerBlock>>>(d_local_means, d_local_weights, d_means, d_weights, d, k, k * threadsPerBlock * numBlocks, (totalThreads + reduNumThreads - 1) / reduNumThreads);
         cudaDeviceSynchronize();
 
         mStep<<<numBlocks, threadsPerBlock>>>(
@@ -704,14 +707,14 @@ int main(int argc, char *argv[])
                                  : (maxSharedMemory / sharedMemPerThread);
         }
 
-        // printf("Numero di thread per blocco reduce 2: %d\n", reduNumThreads);
+        printf("Numero di thread per blocco reduce 2: %d\n", reduNumThreads);
 
         // Calculate the size of the shared memory needed
         unsigned int sharedMemSize = reduNumThreads * d * d * sizeof(double);
 
         // Kernel call
         reduceCovMatrices<<<k, reduNumThreads, sharedMemSize>>>(
-            d_local_cov_matrixes, d_covMatrices, d_weights, d, k, totalThreads * k, N, ((totalThreads + reduNumThreads - 1) / reduNumThreads));
+            d_local_cov_matrixes, d_covMatrices, d_weights, d, k, k * threadsPerBlock * numBlocks, N, ((totalThreads + reduNumThreads - 1) / reduNumThreads));
 
         // Synchronize the device
         cudaDeviceSynchronize();

@@ -2,14 +2,14 @@
 #SBATCH --job-name=mstep_stride
 #SBATCH --output=results/cuda-stride-mstep_output.txt
 #SBATCH --error=results/cuda-stride-mstep_error.txt
-#SBATCH --partition=cascadelake
+#SBATCH --partition=gracehopper
 #SBATCH --gres=gpu:1             # Richiede 1 GPU
 
 if [ ! -d "./build" ]; then
     mkdir build
 fi
 
-spack load cuda
+#spack load cuda
 
 # Compilazione
 srun nvcc gmm-cuda-stride-mstep.cu -o ./build/gmm-cuda-stride-mstep -lcudart -lcublas -lm
@@ -19,4 +19,4 @@ if [ $? -ne 0 ]; then
 fi
 
 # Esecuzione
-srun nsys profile --stats=true --output=profiling_report ./build/gmm-cuda-stride-mstep
+srun ./build/gmm-cuda-stride-mstep
