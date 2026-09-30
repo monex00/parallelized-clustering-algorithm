@@ -1,4 +1,24 @@
-#data folder
+# Datasets (generate them with py/generator.py)
 data/
-#venv folder
+
+# Python virtual environment and caches
 venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Compiled binaries (the SLURM scripts rebuild them in each ./build folder)
+build/
+
+# Outputs written by the CUDA / plotting pipeline
+py/model_params.csv
+py/responsibilities.csv
+responsibilities.csv
+
+# Nsight Systems exports (regenerate from the .nsys-rep with `nsys export`)
+*.sqlite
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
